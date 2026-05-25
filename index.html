@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵金成 - AI产品经理</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #fbfbfd;
+            --black: #1d1d1f;
+            --gray1: #86868b;
+            --gray2: #6e6e73;
+            --gray3: #d2d2d7;
+            --gray4: #f5f5f7;
+            --gray5: #e8e8ed;
+            --blue: #2997ff;
+            --blue-hover: #0077ed;
+            --green: #30d158;
+            --purple: #bf5af2;
+            --orange: #ff9f0a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* ===== Global Nav ===== */
+        .globalnav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            height: 48px;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .globalnav-content {
+            width: 100%;
+            max-width: 1024px;
+            padding: 0 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .globalnav-logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .globalnav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .globalnav-links a {
+            font-size: 12px;
+            color: var(--gray2);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .globalnav-links a:hover {
+            color: var(--black);
+        }
+
+        /* ===== Section Common ===== */
+        .section {
+            padding: 100px 22px;
+        }
+
+        .section-content {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .section-headline {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            line-height: 1.08;
+            color: var(--black);
+        }
+
+        .section-subhead {
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.38;
+            color: var(--gray1);
+            margin-top: 12px;
+            max-width: 600px;
+        }
+
+        .section-subhead.centered {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray2);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 6px;
+        }
+
+        /* ===== Hero - Combined with Resume Info ===== */
+        .hero {
+            background: var(--white);
+            padding: 120px 22px 40px;
+        }
+
+        .hero-content {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-top {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .hero-main {
+            max-width: 600px;
+        }
+
+        .hero-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--gray2);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-headline {
+            font-size: clamp(40px, 6vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .hero-headline .highlight {
+            background: linear-gradient(90deg, #2997ff, #5ac8fa, #bf5af2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--gray2);
+        }
+
+        .hero-contact span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-status {
+            background: var(--gray4);
+            border-radius: 16px;
+            padding: 24px 28px;
+            min-width: 200px;
+        }
+
+        .status-label {
+            font-size: 12px;
+            color: var(--gray2);
+            margin-bottom: 4px;
+        }
+
+        .status-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        /* ===== Advantages Grid (Merged Section) ===== */
+        .hero-advantages {
+            margin-bottom: 50px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .advantage-card {
+            background: var(--gray4);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .advantage-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .advantage-icon-1 { background: linear-gradient(135deg, #2997ff, #5ac8fa); }
+        .advantage-icon-2 { background: linear-gradient(135deg, #30d158, #63e68a); }
+        .advantage-icon-3 { background: linear-gradient(135deg, #ff9f0a, #ffcc02); }
+
+        .advantage-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .advantage-desc {
+            font-size: 13px;
+            color: var(--gray1);
+            line-height: 1.4;
+        }
+
+        /* ===== Education (Compact) ===== */
+        .hero-education {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            padding: 20px 24px;
+            background: var(--gray4);
+            border-radius: 16px;
+        }
+
+        .edu-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 12px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 6px;
+        }
+
+        .edu-info {
+            flex: 1;
+        }
+
+        .edu-school {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 2px;
+        }
+
+        .edu-details {
+            font-size: 13px;
+            color: var(--gray1);
+        }
+
+        /* ===== Career Timeline (compact) ===== */
+        .hero-career {
+            margin-top: 50px;
+            padding-top: 50px;
+            border-top: 1px solid var(--gray5);
+        }
+
+        .career-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray2);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 24px;
+        }
+
+        .career-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .career-item {
+            padding: 24px;
+            background: var(--gray4);
+            border-radius: 16px;
+        }
+
+        .career-period {
+            font-size: 12px;
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .career-company {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 2px;
+        }
+
+        .career-role {
+            font-size: 13px;
+            color: var(--gray2);
+            margin-bottom: 10px;
+        }
+
+        .career-achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .career-achievements li {
+            font-size: 13px;
+            color: var(--gray1);
+            line-height: 1.5;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .career-achievements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        /* ===== Products Section ===== */
+        .products-section {
+            background: var(--white);
+            padding: 100px 22px;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--gray4);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 24px;
+        }
+
+        .product-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .product-tagline {
+            font-size: 17px;
+            color: var(--gray1);
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        /* Product Diagrams */
+        .product-diagram {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 28px 0;
+            border: 1px solid var(--gray5);
+        }
+
+        .diagram-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray2);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .diagram-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .flow-node {
+            background: linear-gradient(135deg, #f5f5f7, #ffffff);
+            border: 2px solid var(--gray5);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 100px;
+            transition: all 0.3s;
+        }
+
+        .flow-node:hover {
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .flow-node.primary {
+            background: linear-gradient(135deg, #2997ff, #5ac8fa);
+            border-color: transparent;
+            color: white;
+        }
+
+        .flow-node.primary .node-label {
+            color: white;
+        }
+
+        .flow-node.ai {
+            background: linear-gradient(135deg, #bf5af2, #da8fff);
+            border-color: transparent;
+            color: white;
+        }
+
+        .flow-node.ai .node-label {
+            color: white;
+        }
+
+        .node-icon {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .node-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .flow-arrow {
+            font-size: 20px;
+            color: var(--gray3);
+        }
+
+        .diagram-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .stat-box {
+            background: var(--gray4);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1;
+        }
+
+        .stat-number .stat-unit {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray2);
+            margin-left: 2px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray2);
+            margin-top: 6px;
+        }
+
+        .product-body {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray2);
+        }
+
+        .product-body h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--black);
+            margin: 24px 0 12px;
+        }
+
+        .product-body h4:first-child {
+            margin-top: 0;
+        }
+
+        .product-body p {
+            margin-bottom: 12px;
+        }
+
+        .product-body ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .product-body li {
+            margin-bottom: 8px;
+        }
+
+        .product-body strong {
+            color: var(--black);
+        }
+
+        .product-highlight {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* ===== Q&A Section - Collapsible ===== */
+        .qa-section {
+            background: var(--white);
+            padding: 80px 22px;
+        }
+
+        .qa-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .qa-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 980px;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .qa-toggle-btn:hover {
+            background: var(--gray2);
+            transform: scale(1.02);
+        }
+
+        .qa-toggle-btn .chevron {
+            transition: transform 0.3s;
+        }
+
+        .qa-toggle-btn.active .chevron {
+            transform: rotate(180deg);
+        }
+
+        .qa-content {
+            max-width: 780px;
+            margin: 0 auto;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .qa-content.show {
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .qa-item {
+            background: var(--gray4);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+        }
+
+        .qa-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .qa-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .qa-question::before {
+            content: 'Q';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--blue);
+            color: var(--white);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== Achievements Section ===== */
+        .achievements-section {
+            background: var(--gray4);
+            padding: 100px 22px;
+        }
+
+        .achievements-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .achievement-card.highlight {
+            background: linear-gradient(135deg, var(--blue), #5ac8fa);
+            color: white;
+        }
+
+        .achievement-card.highlight .achievement-number,
+        .achievement-card.highlight .achievement-label,
+        .achievement-card.highlight .achievement-desc {
+            color: white;
+        }
+
+        .achievement-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+            color: var(--blue);
+        }
+
+        .achievement-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray2);
+            margin-bottom: 12px;
+        }
+
+        .achievement-desc {
+            font-size: 13px;
+            color: var(--gray1);
+            line-height: 1.6;
+        }
+
+        /* ===== Insights Section ===== */
+        .insights-section {
+            background: var(--white);
+            padding: 100px 22px;
+        }
+
+        .insights-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .insight-card {
+            background: var(--gray4);
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .insight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .insight-icon-1 { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
+        .insight-icon-2 { background: linear-gradient(135deg, #4ecdc4, #7eddd6); }
+
+        .insight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .insight-desc {
+            font-size: 14px;
+            color: var(--gray1);
+            line-height: 1.7;
+        }
+
+        .insight-highlight {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* ===== Collaboration Section ===== */
+        .collab-section {
+            background: var(--gray4);
+            padding: 100px 22px;
+        }
+
+        .collab-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .collab-content {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .collab-diagram {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .collab-center {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .collab-core {
+            background: linear-gradient(135deg, var(--blue), #5ac8fa);
+            color: white;
+            padding: 20px 32px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .collab-teams {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .collab-team {
+            background: var(--gray4);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .collab-team:hover {
+            background: var(--white);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .collab-team-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .collab-team-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .collab-case {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .collab-case-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .collab-case-desc {
+            font-size: 15px;
+            color: var(--gray1);
+            line-height: 1.8;
+        }
+
+        /* ===== Commitment Section ===== */
+        .commitment-section {
+            background: var(--white);
+            padding: 100px 22px;
+            text-align: center;
+        }
+
+        .commitment-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .commitment-quote {
+            font-size: clamp(24px, 3.5vw, 32px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            color: var(--black);
+            margin-bottom: 32px;
+        }
+
+        .commitment-quote .gradient-text {
+            background: linear-gradient(90deg, #2997ff, #bf5af2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .commitment-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .commitment-point {
+            background: var(--gray4);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .commitment-point-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .commitment-point-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .commitment-point-desc {
+            font-size: 12px;
+            color: var(--gray1);
+            line-height: 1.5;
+        }
+
+        /* ===== Vision Section ===== */
+        .vision-section {
+            background: var(--gray4);
+            padding: 160px 22px;
+            text-align: center;
+        }
+
+        .vision-content {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .vision-quote {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .vision-quote .gradient-text {
+            background: linear-gradient(90deg, #2997ff, #bf5af2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .vision-desc {
+            font-size: 17px;
+            color: var(--gray1);
+            line-height: 1.5;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 24px 22px;
+            background: var(--white);
+            border-top: 1px solid var(--gray5);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: var(--gray2);
+        }
+
+        /* ===== Animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 834px) {
+            .globalnav-links {
+                display: none;
+            }
+
+            .hero-header {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-status {
+                order: -1;
+            }
+
+            .hero-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diagram-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .diagram-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-headline {
+                font-size: 36px;
+            }
+
+            .product-card {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Nav -->
+    <nav class="globalnav">
+        <div class="globalnav-content">
+            <a href="#" class="globalnav-logo">赵金成</a>
+            <ul class="globalnav-links">
+                <li><a href="#intro">个人介绍</a></li>
+                <li><a href="#achievements">业务成果</a></li>
+                <li><a href="#insights">客户洞察</a></li>
+                <li><a href="#collab">团队协作</a></li>
+                <li><a href="#products">产品案例</a></li>
+                <li><a href="#commitment">职业承诺</a></li>
+                <li><a href="#qa">AI探索</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero - Combined with Resume Info -->
+    <section class="hero" id="intro">
+        <div class="hero-content">
+            <!-- Top: Name + Status -->
+            <div class="hero-top fade-in">
+                <div class="hero-main">
+                    <p class="hero-eyebrow">AI Product Manager</p>
+                    <h1 class="hero-headline">
+                        赵金成<span class="highlight">.</span>
+                    </h1>
+                    <p class="hero-title">7年深耕产品专岗 · AI赋能工作资深实践者</p>
+                    <div class="hero-contact">
+                        <span>📱 186-4980-2400</span>
+                        <span>📧 602947401@qq.com</span>
+                        <span>📍 福州</span>
+                    </div>
+                </div>
+                <div class="hero-status">
+                    <div class="status-label">当前状态</div>
+                    <div class="status-value">✓ 离职，随时到岗</div>
+                </div>
+            </div>
+
+            <!-- Education: Compact -->
+            <div class="hero-education fade-in">
+                <img src="fzu-logo.jpg" class="edu-logo" alt="福州大学">
+                <div class="edu-info">
+                    <div class="edu-school">福州大学</div>
+                    <div class="edu-details">物联网工程（主修）· 工商管理（辅修）· 国家"双一流"211工程 · 远志创业实践班</div>
+                </div>
+            </div>
+
+            <!-- Advantages (Merged Section) -->
+            <div class="hero-advantages fade-in">
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon advantage-icon-1">🚀</div>
+                        <div class="advantage-title">全周期产品经验</div>
+                        <p class="advantage-desc">7年深耕，从需求构思到落地交付</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon advantage-icon-2">🤖</div>
+                        <div class="advantage-title">AI赋能专家</div>
+                        <p class="advantage-desc">核心业务环节效率提升60%+</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon advantage-icon-3">💪</div>
+                        <div class="advantage-title">韧性交付</div>
+                        <p class="advantage-desc">高压环境下稳定输出，持续拓展能力边界</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Highlights -->
+            <div class="hero-career" id="career">
+                <div class="career-title">工作经历</div>
+                <div class="career-list">
+                    <div class="career-item">
+                        <div class="career-period">2023.08 - 2026.04</div>
+                        <div class="career-company">朴朴超市</div>
+                        <div class="career-role">数据产品经理 · 产品组 · 福州</div>
+                        <ul class="career-achievements">
+                            <li>全链路AI产品自主搭建，核心业务效率提升60%+</li>
+                            <li>引入飞书敏捷开发框架，开发周期缩短40%+</li>
+                            <li>情报分析系统全栈搭建，数据处理效率提升80%</li>
+                            <li>C端APP独立开发运营，每日90+任务稳定运行</li>
+                        </ul>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-period">2020.04 - 2023.08</div>
+                        <div class="career-company">星网锐捷</div>
+                        <div class="career-role">技术产品经理 · 市场部 · 福州</div>
+                        <ul class="career-achievements">
+                            <li>驱动酒吧市场品牌服务同比增长50%，销售额增长40%</li>
+                            <li>6个月内推动近1000个项目落地，需求采纳率90%</li>
+                            <li>统筹三大核心产品线研发交付与数据驱动迭代</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="achievements-header">
+            <p class="section-eyebrow">Business Impact</p>
+            <h2 class="section-headline">业务成果</h2>
+            <p class="section-subhead centered">用数据说话，量化产品价值与商业贡献。</p>
+        </div>
+        <div class="achievements-grid">
+            <div class="achievement-card highlight">
+                <div class="achievement-number">60%+</div>
+                <div class="achievement-label">核心业务效率提升</div>
+                <div class="achievement-desc">全链路AI产品自主搭建，从需求构思到落地交付，使核心业务环节效率提升60%以上</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">40%+</div>
+                <div class="achievement-label">开发周期缩短</div>
+                <div class="achievement-desc">引入飞书敏捷开发框架，将产品从需求到上线的完整开发周期缩短40%以上</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">80%</div>
+                <div class="achievement-label">数据处理效率提升</div>
+                <div class="achievement-desc">情报分析系统引入AI技术实现多源数据自动化清洗，数据处理效率提升80%</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">50%</div>
+                <div class="achievement-label">酒吧市场品牌服务增长</div>
+                <div class="achievement-desc">星网锐捷期间深入一线调研优化营销场景，驱动酒吧市场品牌服务同比增长50%，销售额增长40%</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">90%</div>
+                <div class="achievement-label">需求采纳率</div>
+                <div class="achievement-desc">精准抽象业务逻辑并输出创新原型，6个月内推动近1000个项目成功落地</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">90+</div>
+                <div class="achievement-label">每日稳定运行任务</div>
+                <div class="achievement-desc">C端APP独立开发与运营，建立标准化任务调度与监控体系，确保每日90+业务任务稳定有序运行</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section" id="insights">
+        <div class="insights-header">
+            <p class="section-eyebrow">Customer Insights</p>
+            <h2 class="section-headline">客户洞察</h2>
+            <p class="section-subhead centered">先于业务发现问题，用AI赋能解决真实痛点。</p>
+        </div>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-icon insight-icon-1">🚀</div>
+                <h3 class="insight-title">团队首个AI落地实践者</h3>
+                <p class="insight-desc">
+                    2023年底，作为团队内部<span class="insight-highlight">第一个将AI落地并赋能业务</span>的产品经理，率先探索AI在商品对比绑定场景的应用。通过商品分类搭建知识库进行模型训练，成功完成商品绑定自动化，极大解放业务工作效率，发挥AI真实价值。
+                </p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon insight-icon-2">📊</div>
+                <h3 class="insight-title">先于业务的数据洞察</h3>
+                <p class="insight-desc">
+                    数据分析工作<span class="insight-highlight">先于业务一步</span>，主动发现业务机会与效率瓶颈。通过AI数据分析平台帮助业务提升工作效率，从原本每季度一次的分析提升到周度甚至日常分析，让数据真正驱动业务决策。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collab-section" id="collab">
+        <div class="collab-header">
+            <p class="section-eyebrow">Cross-functional Collaboration</p>
+            <h2 class="section-headline">跨团队协作</h2>
+            <p class="section-subhead centered">整合多方资源，发挥各自优势，实现最大投入产出比。</p>
+        </div>
+        <div class="collab-content">
+            <div class="collab-diagram">
+                <div class="collab-center">
+                    <div class="collab-core">AI产品经理<br>协调中枢</div>
+                </div>
+                <div class="collab-teams">
+                    <div class="collab-team">
+                        <div class="collab-team-icon">🧠</div>
+                        <div class="collab-team-name">算法部</div>
+                    </div>
+                    <div class="collab-team">
+                        <div class="collab-team-icon">💻</div>
+                        <div class="collab-team-name">前后端开发</div>
+                    </div>
+                    <div class="collab-team">
+                        <div class="collab-team-icon">📱</div>
+                        <div class="collab-team-name">产品部</div>
+                    </div>
+                    <div class="collab-team">
+                        <div class="collab-team-icon">🤝</div>
+                        <div class="collab-team-name">业务方</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collab-case">
+                <h3 class="collab-case-title">商品拍立得项目：AI与算法的完美融合</h3>
+                <p class="collab-case-desc">
+                    在朴朴期间，为更好使用公司AI资源，<span class="product-highlight">横跨算法部、前后端、产品部与业务方</span>进行多方协调沟通。商品拍立得项目是AI与算法完美融合的典型案例——引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用AI补齐能力短板，用既有算法保证准确率，发挥各自优势，达到最大投入产出比，实现业务价值的"降维打击"。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section class="commitment-section" id="commitment">
+        <div class="commitment-content">
+            <p class="section-eyebrow">Career Commitment</p>
+            <h2 class="section-headline">职业承诺</h2>
+            <p class="commitment-quote">
+                把锐捷网络这份工作，<br><span class="gradient-text">当成为之奋斗一生的事业。</span>
+            </p>
+            <div class="commitment-points">
+                <div class="commitment-point">
+                    <div class="commitment-point-icon">🎯</div>
+                    <div class="commitment-point-title">长期主义</div>
+                    <div class="commitment-point-desc">3年朴朴 + 3年锐捷，稳定的职业轨迹证明坚持与韧性</div>
+                </div>
+                <div class="commitment-point">
+                    <div class="commitment-point-icon">🚀</div>
+                    <div class="commitment-point-title">持续突破</div>
+                    <div class="commitment-point-desc">以强自驱力拓展能力边界，确保复杂项目高质量达成</div>
+                </div>
+                <div class="commitment-point">
+                    <div class="commitment-point-icon">💪</div>
+                    <div class="commitment-point-title">行动破局</div>
+                    <div class="commitment-point-desc">不焦虑、不内卷，用行动创造价值</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-content">
+            <div class="products-header fade-in">
+                <p class="section-eyebrow">Product Cases</p>
+                <h2 class="section-headline">产品案例</h2>
+                <p class="section-subhead centered">从需求到落地，用AI解决真实业务痛点。</p>
+            </div>
+
+            <!-- Product 1: AI商品拍立得 -->
+            <div class="product-card fade-in">
+                <p class="product-eyebrow">AI Product</p>
+                <h3 class="product-name">AI商品拍立得</h3>
+                <p class="product-tagline">
+                    "结合大模型多模态能力与公司既有搜索算法，通过飞书微应用生态快速落地，以极低的开发成本实现了业务流程的'降维打击'。"
+                </p>
+
+                <!-- Product Diagram -->
+                <div class="product-diagram">
+                    <div class="diagram-title">技术架构流程</div>
+                    <div class="diagram-flow">
+                        <div class="flow-node">
+                            <div class="node-icon">📷</div>
+                            <div class="node-label">拍照上传</div>
+                        </div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-node ai">
+                            <div class="node-icon">🧠</div>
+                            <div class="node-label">LLM Vision识别</div>
+                        </div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-node primary">
+                            <div class="node-icon">🔍</div>
+                            <div class="node-label">搜索算法匹配</div>
+                        </div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-node">
+                            <div class="node-icon">💬</div>
+                            <div class="node-label">飞书卡片交付</div>
+                        </div>
+                    </div>
+                    <div class="diagram-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">1个月</div>
+                            <div class="stat-label">交付周期</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-label">周期缩短</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">前端开发量</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-body">
+                    <h4>业务背景</h4>
+                    <p>
+                        <strong>痛点：</strong>业务方高层在超市等线下场景进行市场调研和竞品比价时，传统的"打开APP → 搜索框输入商品名 → 筛选匹配商品 → 记录价格"路径极其繁琐。如果一次调研10款商品，该链路需要重复10次，严重影响高层决策效率。
+                    </p>
+                    <p>
+                        <strong>挑战：</strong>需求由核心高层提出，时效性要求极高。且当时公司内部的"拍照识别"原生算法仍在开发阶段，预计需2-3个月。
+                    </p>
+
+                    <h4>核心行动</h4>
+                    <ul>
+                        <li><strong>敏捷架构选型：</strong>利用飞书微应用生态进行能力组装——飞书多维表格作为数据库，飞书消息卡片作为前端，飞书机器人作为交付载体。前端开发工作量降为零。</li>
+                        <li><strong>混合方案设计：</strong>引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用AI补齐能力短板，用既有算法保证准确率。</li>
+                        <li><strong>数据飞轮机制：</strong>设计端到端的用户反馈机制，在消息卡片上配置"打分评价"和"不满意原因反馈"，定期对Badcase归因分析，推动AI Prompt调整或算法迭代。</li>
+                    </ul>
+
+                    <h4>项目成果</h4>
+                    <p>
+                        全链路从需求调研到上线仅耗时<span class="product-highlight">1个月</span>，比常规开发排期缩短60%以上。产品上线后获得业务方高层高度评价，成为公司内部AI轻量化落地的标杆案例。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Product 2: AI数据分析 -->
+            <div class="product-card fade-in">
+                <p class="product-eyebrow">AI Product</p>
+                <h3 class="product-name">AI数据分析平台</h3>
+                <p class="product-tagline">
+                    "公司首个AI数据分析落地探索项目，最早尝试将大模型能力与业务数据结合的先行项目。"
+                </p>
+
+                <!-- Product Diagram -->
+                <div class="product-diagram">
+                    <div class="diagram-title">三次技术方案迭代</div>
+                    <div class="diagram-flow">
+                        <div class="flow-node">
+                            <div class="node-icon">📄</div>
+                            <div class="node-label">文件上传</div>
+                        </div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-node">
+                            <div class="node-icon">🗄️</div>
+                            <div class="node-label">NL2SQL</div>
+                        </div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-node primary">
+                            <div class="node-icon">✅</div>
+                            <div class="node-label">特征提取</div>
+                        </div>
+                    </div>
+                    <div class="diagram-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">轮方案迭代</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">80%</div>
+                            <div class="stat-label">需求满足度</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">季度→日常</div>
+                            <div class="stat-label">分析频率提升</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-body">
+                    <h4>项目背景</h4>
+                    <p>
+                        业务线积累了海量时间序列数据和商品价格数据，但所有分析工作都由业务人员手动完成，只能每季度做一次全面分析，日常和周度分析几乎空白，导致很多业务机会被错过。
+                    </p>
+
+                    <h4>三次技术方案迭代</h4>
+                    <p><strong>第一阶段：文件上传 + 上下文注入</strong></p>
+                    <p>让业务人员上传CSV数据文件，将数据作为上下文输入大模型分析。验证了可行性，但受限于当时的上下文窗口大小，数据量稍大就会出现分析错误。</p>
+
+                    <p><strong>第二阶段：NL2SQL + 数据库直连</strong></p>
+                    <p>引入自然语言转SQL技术，用户用自然语言提问，系统自动生成SQL查询数据库。但遇到上下文爆炸瓶颈——查询结果包含数千条数据时，大模型无法处理。</p>
+
+                    <p><strong>第三阶段：特征提取 + AI分析（最终方案）</strong></p>
+                    <p>重新思考大模型能力边界：擅长基于结构化特征进行推理，不擅长处理海量原始数据。方案：</p>
+                    <ul>
+                        <li>先通过SQL提取数据的核心统计特征（总量、分类数量、最大/最小/平均值/标准差、时间范围等）</li>
+                        <li>再将高度浓缩的特征值输入大模型进行分析解读</li>
+                    </ul>
+                    <p>成功解决上下文爆炸问题，满足业务方<span class="product-highlight">80%</span>的基础数据分析需求。</p>
+
+                    <h4>个人收获</h4>
+                    <p>
+                        最大收获是真正理解了<span class="product-highlight">大模型的能力边界</span>：不是所有问题都适合用AI解决，AI产品经理最重要的能力是找到"业务需求"与"AI能力"的最佳结合点。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section - Collapsible -->
+    <section class="qa-section" id="qa">
+        <div class="section-content">
+            <div class="qa-header fade-in">
+                <p class="section-eyebrow">AI Exploration</p>
+                <h2 class="section-headline">AI探索</h2>
+                <br>
+                <button class="qa-toggle-btn" id="qaToggle">
+                    展开AI探索 ▼
+                </button>
+            </div>
+            <div class="qa-content" id="qaContent">
+                <div class="qa-item">
+                    <h3 class="qa-question">AI赋能工作的考核，会不会把token用量作为员工KPI？</h3>
+                </div>
+                <div class="qa-item">
+                    <h3 class="qa-question">如何看待员工产出？0-1 vs 1-100的价值权衡</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="vision-section">
+        <div class="vision-content fade-in">
+            <h2 class="vision-quote">
+                AI融入每一个产品，<br><span class="gradient-text">赋能每一个行业场景。</span>
+            </h2>
+            <p class="vision-desc">
+                我深信人工智能将重新定义每一个行业。凭借在ToB领域的深厚积累和AI全流程的实战经验，我希望能在AI产品化的道路上持续深耕，为企业创造真实可量化的业务价值。
+            </p>
+            <div style="margin-top: 80px;">
+                <h2 style="font-size: clamp(36px, 5vw, 56px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--black);">
+                    谢谢观看<span class="highlight">.</span>
+                </h2>
+                <p style="font-size: 17px; color: var(--gray1); margin-top: 16px;">期待与您共创未来</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2025 赵金成 · AI Product Manager</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for fade-in
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 60);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeEls.forEach(el => obs.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Q&A Toggle
+        const qaToggle = document.getElementById('qaToggle');
+        const qaContent = document.getElementById('qaContent');
+
+        qaToggle.addEventListener('click', () => {
+            qaContent.classList.toggle('show');
+            qaToggle.classList.toggle('active');
+
+            if (qaContent.classList.contains('show')) {
+                qaToggle.innerHTML = '收起AI探索 ▲';
+            } else {
+                qaToggle.innerHTML = '展开AI探索 ▼';
+            }
+        });
+    </script>
+
+</body>
+</html>
