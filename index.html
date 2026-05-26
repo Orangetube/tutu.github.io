@@ -15,18 +15,21 @@
         }
 
         :root {
-            --white: #fbfbfd;
-            --black: #1d1d1f;
-            --gray1: #86868b;
-            --gray2: #6e6e73;
-            --gray3: #d2d2d7;
-            --gray4: #f5f5f7;
-            --gray5: #e8e8ed;
-            --blue: #2997ff;
-            --blue-hover: #0077ed;
-            --green: #30d158;
-            --purple: #bf5af2;
-            --orange: #ff9f0a;
+            --white: #ffffff;
+            --bg: #fafafa;
+            --black: #111827;
+            --gray1: #6b7280;
+            --gray2: #9ca3af;
+            --gray3: #d1d5db;
+            --gray4: #f3f4f6;
+            --gray5: #f9fafb;
+            --border: #f0f0f0;
+            --blue: #2563eb;
+            --blue-light: #eff6ff;
+            --green: #15803d;
+            --green-bg: #f0fdf4;
+            --green-border: #bbf7d0;
+            --purple: #7c3aed;
         }
 
         html {
@@ -37,7 +40,7 @@
             font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
             background: var(--white);
             color: var(--black);
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
@@ -50,11 +53,11 @@
             left: 0;
             right: 0;
             z-index: 9999;
-            height: 48px;
-            background: rgba(251, 251, 253, 0.8);
+            height: 52px;
+            background: rgba(255, 255, 255, 0.82);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,30 +66,32 @@
         .globalnav-content {
             width: 100%;
             max-width: 1024px;
-            padding: 0 22px;
+            padding: 0 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .globalnav-logo {
-            font-size: 21px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--black);
             text-decoration: none;
+            letter-spacing: -0.01em;
         }
 
         .globalnav-links {
             display: flex;
-            gap: 24px;
+            gap: 28px;
             list-style: none;
         }
 
         .globalnav-links a {
-            font-size: 12px;
-            color: var(--gray2);
+            font-size: 13px;
+            color: var(--gray1);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 400;
         }
 
         .globalnav-links a:hover {
@@ -95,7 +100,7 @@
 
         /* ===== Section Common ===== */
         .section {
-            padding: 100px 22px;
+            padding: 120px 24px;
         }
 
         .section-content {
@@ -104,20 +109,20 @@
         }
 
         .section-headline {
-            font-size: 48px;
+            font-size: 40px;
             font-weight: 700;
-            letter-spacing: -0.015em;
-            line-height: 1.08;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
             color: var(--black);
         }
 
         .section-subhead {
-            font-size: 21px;
+            font-size: 17px;
             font-weight: 400;
-            line-height: 1.38;
+            line-height: 1.6;
             color: var(--gray1);
             margin-top: 12px;
-            max-width: 600px;
+            max-width: 560px;
         }
 
         .section-subhead.centered {
@@ -131,14 +136,22 @@
             font-weight: 600;
             color: var(--gray2);
             text-transform: uppercase;
-            letter-spacing: 0.02em;
-            margin-bottom: 6px;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
         }
 
-        /* ===== Hero - Combined with Resume Info ===== */
+        /* ===== Unified Card Style ===== */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== Hero Section ===== */
         .hero {
             background: var(--white);
-            padding: 120px 22px 40px;
+            padding: 130px 24px 60px;
         }
 
         .hero-content {
@@ -149,62 +162,82 @@
         .hero-top {
             display: grid;
             grid-template-columns: 1fr auto;
-            gap: 40px;
+            gap: 48px;
             align-items: start;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .hero-main {
-            max-width: 600px;
+            max-width: 580px;
         }
 
         .hero-right {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 0;
         }
 
         .hero-profile {
-            width: auto;
+            width: 180px;
             height: auto;
-            max-width: 160px;
-            border-radius: 12px;
-            object-fit: contain;
+            border-radius: 16px;
+            object-fit: cover;
             flex-shrink: 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
         .hero-eyebrow {
             font-size: 12px;
             font-weight: 600;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.1em;
             color: var(--gray2);
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .hero-headline {
-            font-size: clamp(40px, 6vw, 56px);
+            font-size: clamp(42px, 6vw, 56px);
             font-weight: 700;
             letter-spacing: -0.03em;
             line-height: 1.05;
             color: var(--black);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .hero-headline .highlight {
-            background: linear-gradient(90deg, #2997ff, #5ac8fa, #bf5af2);
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
+        .hero-title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
         .hero-title {
-            font-size: 21px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 500;
             color: var(--black);
-            margin-bottom: 12px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--green-bg);
+            color: var(--green);
+            border: 1px solid var(--green-border);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         .hero-contact {
@@ -212,7 +245,7 @@
             flex-wrap: wrap;
             gap: 20px;
             font-size: 14px;
-            color: var(--gray2);
+            color: var(--gray1);
         }
 
         .hero-contact span {
@@ -221,95 +254,27 @@
             gap: 6px;
         }
 
-        .hero-status {
-            background: var(--gray4);
-            border-radius: 16px;
-            padding: 24px 28px;
-            min-width: 200px;
-        }
-
-        .status-label {
-            font-size: 12px;
-            color: var(--gray2);
-            margin-bottom: 4px;
-        }
-
-        .status-value {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--green);
-        }
-
-        /* ===== Advantages Grid (Merged Section) ===== */
-        .hero-advantages {
-            margin-bottom: 50px;
-        }
-
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .advantage-card {
-            background: var(--gray4);
-            border-radius: 20px;
-            padding: 28px 24px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .advantage-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-        }
-
-        .advantage-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            margin: 0 auto 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .advantage-icon-1 { background: linear-gradient(135deg, #2997ff, #5ac8fa); }
-        .advantage-icon-2 { background: linear-gradient(135deg, #30d158, #63e68a); }
-        .advantage-icon-3 { background: linear-gradient(135deg, #ff9f0a, #ffcc02); }
-
-        .advantage-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .advantage-desc {
-            font-size: 13px;
-            color: var(--gray1);
-            line-height: 1.4;
-        }
-
         /* ===== Education (Compact) ===== */
         .hero-education {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             padding: 20px 24px;
-            background: var(--gray4);
+            background: var(--white);
             border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .edu-logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
             object-fit: contain;
             flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 6px;
+            background: var(--gray5);
+            padding: 4px;
         }
 
         .edu-info {
@@ -317,22 +282,37 @@
         }
 
         .edu-school {
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .edu-major {
+            font-size: 14px;
+            color: var(--gray1);
             margin-bottom: 2px;
         }
 
-        .edu-details {
-            font-size: 13px;
-            color: var(--gray1);
+        .edu-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
         }
 
-        /* ===== Career Timeline (compact) ===== */
+        .edu-tag {
+            font-size: 12px;
+            color: var(--gray2);
+            background: var(--gray4);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ===== Career Timeline ===== */
         .hero-career {
-            margin-top: 50px;
-            padding-top: 50px;
-            border-top: 1px solid var(--gray5);
+            padding-top: 60px;
+            border-top: 1px solid var(--border);
         }
 
         .career-title {
@@ -340,7 +320,7 @@
             font-weight: 600;
             color: var(--gray2);
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.06em;
             margin-bottom: 24px;
         }
 
@@ -351,43 +331,55 @@
         }
 
         .career-item {
-            padding: 24px;
-            background: var(--gray4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 28px;
+            background: var(--white);
             border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            min-height: 280px;
         }
 
         .career-period {
+            display: inline-block;
+            background: var(--gray4);
+            color: var(--gray1);
+            border-radius: 6px;
+            padding: 4px 10px;
             font-size: 12px;
-            color: var(--blue);
-            font-weight: 600;
-            margin-bottom: 6px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            width: fit-content;
         }
 
         .career-company {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--black);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .career-role {
             font-size: 13px;
-            color: var(--gray2);
-            margin-bottom: 10px;
+            color: var(--gray1);
+            margin-bottom: 16px;
         }
 
         .career-achievements {
             list-style: none;
             padding: 0;
+            flex: 1;
         }
 
         .career-achievements li {
             font-size: 13px;
             color: var(--gray1);
-            line-height: 1.5;
+            line-height: 1.6;
             padding-left: 16px;
             position: relative;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .career-achievements li::before {
@@ -398,24 +390,98 @@
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: var(--blue);
+            background: var(--gray3);
+        }
+
+        .career-achievements li .metric {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        /* ===== Insights Section ===== */
+        .insights-section {
+            background: var(--bg);
+            padding: 120px 24px;
+        }
+
+        .insights-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .insight-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .insight-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .insight-icon-1 { background: #fef2f2; }
+        .insight-icon-2 { background: #f0fdfa; }
+
+        .insight-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .insight-desc {
+            font-size: 14px;
+            color: var(--gray1);
+            line-height: 1.75;
+        }
+
+        .insight-highlight {
+            display: inline;
+            font-weight: 600;
+            color: var(--blue);
         }
 
         /* ===== Products Section ===== */
         .products-section {
             background: var(--white);
-            padding: 100px 22px;
+            padding: 120px 24px;
         }
 
         .products-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .product-card {
-            background: var(--gray4);
-            border-radius: 24px;
-            padding: 50px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 48px;
             margin-bottom: 24px;
         }
 
@@ -428,39 +494,41 @@
             font-weight: 600;
             color: var(--blue);
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.06em;
             margin-bottom: 8px;
         }
 
         .product-name {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--black);
             margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
 
         .product-tagline {
-            font-size: 17px;
+            font-size: 15px;
             color: var(--gray1);
             margin-bottom: 32px;
             font-style: italic;
+            line-height: 1.6;
         }
 
-        /* Product Diagrams */
+        /* Product Diagram */
         .product-diagram {
-            background: var(--white);
+            background: var(--gray5);
             border-radius: 16px;
             padding: 32px;
             margin: 28px 0;
-            border: 1px solid var(--gray5);
+            border: 1px solid var(--border);
         }
 
         .diagram-title {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--gray2);
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.06em;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -474,24 +542,27 @@
         }
 
         .flow-node {
-            background: linear-gradient(135deg, #f5f5f7, #ffffff);
-            border: 2px solid var(--gray5);
+            background: var(--white);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 16px 20px;
             text-align: center;
             min-width: 100px;
             transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .flow-node:hover {
             border-color: var(--blue);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .flow-node.primary {
-            background: linear-gradient(135deg, #2997ff, #5ac8fa);
+            background: var(--blue);
             border-color: transparent;
             color: white;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
         }
 
         .flow-node.primary .node-label {
@@ -499,9 +570,10 @@
         }
 
         .flow-node.ai {
-            background: linear-gradient(135deg, #bf5af2, #da8fff);
+            background: var(--purple);
             border-color: transparent;
             color: white;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
         }
 
         .flow-node.ai .node-label {
@@ -527,15 +599,17 @@
         .diagram-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 12px;
             margin-top: 24px;
         }
 
         .stat-box {
-            background: var(--gray4);
+            background: var(--white);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .stat-number {
@@ -548,7 +622,7 @@
         .stat-number .stat-unit {
             font-size: 14px;
             font-weight: 400;
-            color: var(--gray2);
+            color: var(--gray1);
             margin-left: 2px;
         }
 
@@ -559,16 +633,16 @@
         }
 
         .product-body {
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--gray2);
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--gray1);
         }
 
         .product-body h4 {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--black);
-            margin: 24px 0 12px;
+            margin: 28px 0 12px;
         }
 
         .product-body h4:first-child {
@@ -593,23 +667,20 @@
         }
 
         .product-highlight {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--blue), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: inline;
             font-weight: 600;
+            color: var(--blue);
         }
 
-        /* ===== Q&A Section - Collapsible ===== */
+        /* ===== Q&A Section ===== */
         .qa-section {
-            background: var(--white);
-            padding: 80px 22px;
+            background: var(--bg);
+            padding: 120px 24px;
         }
 
         .qa-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .qa-toggle-btn {
@@ -619,16 +690,17 @@
             background: var(--black);
             color: var(--white);
             border: none;
-            border-radius: 980px;
-            padding: 14px 28px;
-            font-size: 15px;
-            font-weight: 600;
+            border-radius: 999px;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         .qa-toggle-btn:hover {
-            background: var(--gray2);
+            background: #374151;
             transform: scale(1.02);
         }
 
@@ -655,10 +727,12 @@
         }
 
         .qa-item {
-            background: var(--gray4);
+            background: var(--white);
             border-radius: 16px;
-            padding: 28px 32px;
-            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 24px 28px;
+            margin-bottom: 12px;
         }
 
         .qa-item:last-child {
@@ -666,7 +740,7 @@
         }
 
         .qa-question {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: var(--black);
             padding-left: 28px;
@@ -690,228 +764,10 @@
             justify-content: center;
         }
 
-        /* ===== Achievements Section ===== */
-        .achievements-section {
-            background: var(--gray4);
-            padding: 100px 22px;
-        }
-
-        .achievements-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .achievement-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 32px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .achievement-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .achievement-card.highlight {
-            background: linear-gradient(135deg, var(--blue), #5ac8fa);
-            color: white;
-        }
-
-        .achievement-card.highlight .achievement-number,
-        .achievement-card.highlight .achievement-label,
-        .achievement-card.highlight .achievement-desc {
-            color: white;
-        }
-
-        .achievement-number {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 8px;
-            color: var(--blue);
-        }
-
-        .achievement-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--gray2);
-            margin-bottom: 12px;
-        }
-
-        .achievement-desc {
-            font-size: 13px;
-            color: var(--gray1);
-            line-height: 1.6;
-        }
-
-        /* ===== Insights Section ===== */
-        .insights-section {
-            background: var(--white);
-            padding: 100px 22px;
-        }
-
-        .insights-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .insight-card {
-            background: var(--gray4);
-            border-radius: 20px;
-            padding: 32px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .insight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .insight-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .insight-icon-1 { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
-        .insight-icon-2 { background: linear-gradient(135deg, #4ecdc4, #7eddd6); }
-
-        .insight-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 12px;
-        }
-
-        .insight-desc {
-            font-size: 14px;
-            color: var(--gray1);
-            line-height: 1.7;
-        }
-
-        .insight-highlight {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--blue), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
-        }
-
-        /* ===== Collaboration Section ===== */
-        .collab-section {
-            background: var(--gray4);
-            padding: 100px 22px;
-        }
-
-        .collab-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .collab-content {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .collab-diagram {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-
-        .collab-center {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .collab-core {
-            background: linear-gradient(135deg, var(--blue), #5ac8fa);
-            color: white;
-            padding: 20px 32px;
-            border-radius: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .collab-teams {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-
-        .collab-team {
-            background: var(--gray4);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .collab-team:hover {
-            background: var(--white);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        }
-
-        .collab-team-icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .collab-team-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--black);
-        }
-
-        .collab-case {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 32px;
-        }
-
-        .collab-case-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 16px;
-        }
-
-        .collab-case-desc {
-            font-size: 15px;
-            color: var(--gray1);
-            line-height: 1.8;
-        }
-
         /* ===== Commitment Section ===== */
         .commitment-section {
             background: var(--white);
-            padding: 100px 22px;
+            padding: 120px 24px;
             text-align: center;
         }
 
@@ -921,16 +777,17 @@
         }
 
         .commitment-quote {
-            font-size: clamp(24px, 3.5vw, 32px);
+            font-size: clamp(22px, 3.5vw, 30px);
             font-weight: 700;
             letter-spacing: -0.02em;
-            line-height: 1.3;
+            line-height: 1.35;
             color: var(--black);
-            margin-bottom: 32px;
+            margin-top: 24px;
+            margin-bottom: 40px;
         }
 
         .commitment-quote .gradient-text {
-            background: linear-gradient(90deg, #2997ff, #bf5af2);
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -939,38 +796,41 @@
         .commitment-points {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 16px;
             margin-top: 40px;
         }
 
         .commitment-point {
-            background: var(--gray4);
+            background: var(--white);
             border-radius: 16px;
-            padding: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 28px 24px;
+            text-align: left;
         }
 
         .commitment-point-icon {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 12px;
         }
 
         .commitment-point-title {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             color: var(--black);
             margin-bottom: 8px;
         }
 
         .commitment-point-desc {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--gray1);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* ===== Vision Section ===== */
         .vision-section {
-            background: var(--gray4);
-            padding: 160px 22px;
+            background: var(--bg);
+            padding: 140px 24px;
             text-align: center;
         }
 
@@ -980,32 +840,57 @@
         }
 
         .vision-quote {
-            font-size: clamp(28px, 4vw, 40px);
+            font-size: clamp(26px, 4vw, 36px);
             font-weight: 700;
             letter-spacing: -0.02em;
-            line-height: 1.15;
+            line-height: 1.2;
             color: var(--black);
             margin-bottom: 20px;
         }
 
         .vision-quote .gradient-text {
-            background: linear-gradient(90deg, #2997ff, #bf5af2);
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .vision-desc {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--gray1);
-            line-height: 1.5;
+            line-height: 1.7;
+        }
+
+        .thanks-block {
+            margin-top: 80px;
+        }
+
+        .thanks-title {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--black);
+        }
+
+        .thanks-title .highlight {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .thanks-sub {
+            font-size: 16px;
+            color: var(--gray1);
+            margin-top: 16px;
         }
 
         /* ===== Footer ===== */
         footer {
-            padding: 24px 22px;
+            padding: 24px;
             background: var(--white);
-            border-top: 1px solid var(--gray5);
+            border-top: 1px solid var(--border);
             text-align: center;
         }
 
@@ -1017,9 +902,9 @@
         /* ===== Animations ===== */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .fade-in.visible {
@@ -1033,19 +918,29 @@
                 display: none;
             }
 
-            .hero-header {
+            .hero-top {
                 grid-template-columns: 1fr;
+                gap: 32px;
             }
 
-            .hero-status {
+            .hero-right {
                 order: -1;
+                align-items: flex-start;
             }
 
-            .hero-highlights {
+            .hero-profile {
+                width: 120px;
+            }
+
+            .career-list {
                 grid-template-columns: 1fr;
             }
 
-            .advantages-grid {
+            .career-item {
+                min-height: auto;
+            }
+
+            .insights-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1062,11 +957,46 @@
             }
 
             .section-headline {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .product-card {
-                padding: 32px;
+                padding: 28px;
+            }
+
+            .commitment-points {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .hero {
+                padding: 110px 20px 40px;
+            }
+
+            .insights-section,
+            .qa-section,
+            .commitment-section {
+                padding: 80px 20px;
+            }
+
+            .vision-section {
+                padding: 100px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-contact {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero-title-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
@@ -1079,9 +1009,7 @@
             <a href="#" class="globalnav-logo">赵金成</a>
             <ul class="globalnav-links">
                 <li><a href="#intro">个人介绍</a></li>
-                <li><a href="#achievements">业务成果</a></li>
                 <li><a href="#insights">客户洞察</a></li>
-                <li><a href="#collab">团队协作</a></li>
                 <li><a href="#products">产品案例</a></li>
                 <li><a href="#commitment">职业承诺</a></li>
                 <li><a href="#qa">AI探索</a></li>
@@ -1089,28 +1017,27 @@
         </div>
     </nav>
 
-    <!-- Hero - Combined with Resume Info -->
+    <!-- Hero Section -->
     <section class="hero" id="intro">
         <div class="hero-content">
-            <!-- Top: Name + Status -->
+            <!-- Top: Name + Status + Photo -->
             <div class="hero-top fade-in">
                 <div class="hero-main">
                     <p class="hero-eyebrow">AI Product Manager</p>
                     <h1 class="hero-headline">
                         赵金成<span class="highlight">.</span>
                     </h1>
-                    <p class="hero-title">7年深耕产品专岗 · AI赋能工作资深实践者</p>
+                    <div class="hero-title-row">
+                        <p class="hero-title">7年深耕产品专岗 · AI赋能工作资深实践者</p>
+                        <span class="status-badge">&#10003; 离职，随时到岗</span>
+                    </div>
                     <div class="hero-contact">
-                        <span>📱 186-4980-2400</span>
-                        <span>📧 602947401@qq.com</span>
-                        <span>📍 福州</span>
+                        <span>&#128241; 186-4980-2400</span>
+                        <span>&#9993; 602947401@qq.com</span>
+                        <span>&#128205; 福州</span>
                     </div>
                 </div>
                 <div class="hero-right">
-                    <div class="hero-status">
-                        <div class="status-label">当前状态</div>
-                        <div class="status-value">✓ 离职，随时到岗</div>
-                    </div>
                     <img src="profile.jpg" class="hero-profile" alt="赵金成">
                 </div>
             </div>
@@ -1120,33 +1047,40 @@
                 <img src="fzu-logo.jpg" class="edu-logo" alt="福州大学">
                 <div class="edu-info">
                     <div class="edu-school">福州大学</div>
-                    <div class="edu-details">物联网工程（主修）· 工商管理（辅修）· 国家"双一流"211工程 · 远志创业实践班</div>
+                    <div class="edu-major">物联网工程（主修）· 工商管理（辅修）</div>
+                    <div class="edu-tags">
+                        <span class="edu-tag">国家"双一流"211工程</span>
+                        <span class="edu-tag">远志创业实践班</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Advantages (Merged Section) -->
-            <!-- Career Highlights -->
-            <div class="hero-career" id="career">
+            <!-- Career Timeline -->
+            <div class="hero-career fade-in" id="career">
                 <div class="career-title">工作经历</div>
                 <div class="career-list">
                     <div class="career-item">
-                        <div class="career-period">2023.08 - 2026.04</div>
-                        <div class="career-company">朴朴超市</div>
-                        <div class="career-role">数据产品经理 · 产品组 · 福州</div>
+                        <div>
+                            <div class="career-period">2023.08 - 2026.04</div>
+                            <div class="career-company">朴朴超市</div>
+                            <div class="career-role">数据产品经理 · 产品组 · 福州</div>
+                        </div>
                         <ul class="career-achievements">
-                            <li>全链路AI产品自主搭建，核心业务效率提升60%+</li>
-                            <li>引入飞书敏捷开发框架，开发周期缩短40%+</li>
-                            <li>情报分析系统全栈搭建，数据处理效率提升80%</li>
-                            <li>C端APP独立开发运营，每日90+任务稳定运行</li>
+                            <li>全链路AI产品自主搭建，核心业务效率提升<span class="metric">60%+</span></li>
+                            <li>引入飞书敏捷开发框架，开发周期缩短<span class="metric">40%+</span></li>
+                            <li>情报分析系统全栈搭建，数据处理效率提升<span class="metric">80%</span></li>
+                            <li>C端APP独立开发运营，每日<span class="metric">90+</span>任务稳定运行</li>
                         </ul>
                     </div>
                     <div class="career-item">
-                        <div class="career-period">2020.04 - 2023.08</div>
-                        <div class="career-company">星网锐捷</div>
-                        <div class="career-role">技术产品经理 · 市场部 · 福州</div>
+                        <div>
+                            <div class="career-period">2020.04 - 2023.08</div>
+                            <div class="career-company">星网锐捷</div>
+                            <div class="career-role">技术产品经理 · 市场部 · 福州</div>
+                        </div>
                         <ul class="career-achievements">
-                            <li>驱动酒吧市场品牌服务同比增长50%，销售额增长40%</li>
-                            <li>6个月内推动近1000个项目落地，需求采纳率90%</li>
+                            <li>驱动酒吧市场品牌服务同比增长<span class="metric">50%</span>，销售额增长<span class="metric">40%</span></li>
+                            <li>6个月内推动近1000个项目落地，需求采纳率<span class="metric">90%</span></li>
                             <li>统筹三大核心产品线研发交付与数据驱动迭代</li>
                         </ul>
                     </div>
@@ -1157,21 +1091,21 @@
 
     <!-- Insights Section -->
     <section class="insights-section" id="insights">
-        <div class="insights-header">
+        <div class="insights-header fade-in">
             <p class="section-eyebrow">Customer Insights</p>
             <h2 class="section-headline">客户洞察</h2>
             <p class="section-subhead centered">先于业务发现问题，用AI赋能解决真实痛点。</p>
         </div>
         <div class="insights-grid">
-            <div class="insight-card">
-                <div class="insight-icon insight-icon-1">🚀</div>
+            <div class="insight-card fade-in">
+                <div class="insight-icon insight-icon-1">&#128640;</div>
                 <h3 class="insight-title">团队首个AI落地实践者</h3>
                 <p class="insight-desc">
                     2023年底，作为团队内部<span class="insight-highlight">第一个将AI落地并赋能业务</span>的产品经理，率先探索AI在商品对比绑定场景的应用。通过商品分类搭建知识库进行模型训练，成功完成商品绑定自动化，极大解放业务工作效率，发挥AI真实价值。
                 </p>
             </div>
-            <div class="insight-card">
-                <div class="insight-icon insight-icon-2">📊</div>
+            <div class="insight-card fade-in">
+                <div class="insight-icon insight-icon-2">&#128202;</div>
                 <h3 class="insight-title">先于业务的数据洞察</h3>
                 <p class="insight-desc">
                     数据分析工作<span class="insight-highlight">先于业务一步</span>，主动发现业务机会与效率瓶颈。通过AI数据分析平台帮助业务提升工作效率，从原本每季度一次的分析提升到周度甚至日常分析，让数据真正驱动业务决策。
@@ -1202,22 +1136,22 @@
                     <div class="diagram-title">技术架构流程</div>
                     <div class="diagram-flow">
                         <div class="flow-node">
-                            <div class="node-icon">📷</div>
+                            <div class="node-icon">&#128247;</div>
                             <div class="node-label">拍照上传</div>
                         </div>
-                        <span class="flow-arrow">→</span>
+                        <span class="flow-arrow">&rarr;</span>
                         <div class="flow-node ai">
-                            <div class="node-icon">🧠</div>
+                            <div class="node-icon">&#129504;</div>
                             <div class="node-label">LLM Vision识别</div>
                         </div>
-                        <span class="flow-arrow">→</span>
+                        <span class="flow-arrow">&rarr;</span>
                         <div class="flow-node primary">
-                            <div class="node-icon">🔍</div>
+                            <div class="node-icon">&#128269;</div>
                             <div class="node-label">搜索算法匹配</div>
                         </div>
-                        <span class="flow-arrow">→</span>
+                        <span class="flow-arrow">&rarr;</span>
                         <div class="flow-node">
-                            <div class="node-icon">💬</div>
+                            <div class="node-icon">&#128172;</div>
                             <div class="node-label">飞书卡片交付</div>
                         </div>
                     </div>
@@ -1273,17 +1207,17 @@
                     <div class="diagram-title">三次技术方案迭代</div>
                     <div class="diagram-flow">
                         <div class="flow-node">
-                            <div class="node-icon">📄</div>
+                            <div class="node-icon">&#128196;</div>
                             <div class="node-label">文件上传</div>
                         </div>
-                        <span class="flow-arrow">→</span>
+                        <span class="flow-arrow">&rarr;</span>
                         <div class="flow-node">
-                            <div class="node-icon">🗄️</div>
+                            <div class="node-icon">&#128451;</div>
                             <div class="node-label">NL2SQL</div>
                         </div>
-                        <span class="flow-arrow">→</span>
+                        <span class="flow-arrow">&rarr;</span>
                         <div class="flow-node primary">
-                            <div class="node-icon">✅</div>
+                            <div class="node-icon">&#9989;</div>
                             <div class="node-label">特征提取</div>
                         </div>
                     </div>
@@ -1297,7 +1231,7 @@
                             <div class="stat-label">需求满足度</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-number">季度→日常</div>
+                            <div class="stat-number">季度&rarr;日常</div>
                             <div class="stat-label">分析频率提升</div>
                         </div>
                     </div>
@@ -1333,7 +1267,7 @@
         </div>
     </section>
 
-    <!-- Q&A Section - Collapsible -->
+    <!-- Q&A Section -->
     <section class="qa-section" id="qa">
         <div class="section-content">
             <div class="qa-header fade-in">
@@ -1341,7 +1275,7 @@
                 <h2 class="section-headline">AI探索</h2>
                 <br>
                 <button class="qa-toggle-btn" id="qaToggle">
-                    展开AI探索 ▼
+                    展开AI探索 <span class="chevron">&#9660;</span>
                 </button>
             </div>
             <div class="qa-content" id="qaContent">
@@ -1357,7 +1291,7 @@
 
     <!-- Commitment Section -->
     <section class="commitment-section" id="commitment">
-        <div class="commitment-content">
+        <div class="commitment-content fade-in">
             <p class="section-eyebrow">Career Commitment</p>
             <h2 class="section-headline">职业承诺</h2>
             <p class="commitment-quote">
@@ -1365,17 +1299,17 @@
             </p>
             <div class="commitment-points">
                 <div class="commitment-point">
-                    <div class="commitment-point-icon">🎯</div>
+                    <div class="commitment-point-icon">&#127919;</div>
                     <div class="commitment-point-title">长期主义</div>
                     <div class="commitment-point-desc">3年朴朴 + 3年锐捷，稳定的职业轨迹证明坚持与韧性</div>
                 </div>
                 <div class="commitment-point">
-                    <div class="commitment-point-icon">🚀</div>
+                    <div class="commitment-point-icon">&#128640;</div>
                     <div class="commitment-point-title">持续突破</div>
                     <div class="commitment-point-desc">以强自驱力拓展能力边界，确保复杂项目高质量达成</div>
                 </div>
                 <div class="commitment-point">
-                    <div class="commitment-point-icon">💪</div>
+                    <div class="commitment-point-icon">&#128170;</div>
                     <div class="commitment-point-title">行动破局</div>
                     <div class="commitment-point-desc">不焦虑、不内卷，用行动创造价值</div>
                 </div>
@@ -1383,7 +1317,7 @@
         </div>
     </section>
 
-    <!-- Vision -->
+    <!-- Vision + Thanks -->
     <section class="vision-section">
         <div class="vision-content fade-in">
             <h2 class="vision-quote">
@@ -1392,18 +1326,18 @@
             <p class="vision-desc">
                 我深信人工智能将重新定义每一个行业。凭借在ToB领域的深厚积累和AI全流程的实战经验，我希望能在AI产品化的道路上持续深耕，为企业创造真实可量化的业务价值。
             </p>
-            <div style="margin-top: 80px;">
-                <h2 style="font-size: clamp(36px, 5vw, 56px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--black);">
+            <div class="thanks-block">
+                <h2 class="thanks-title">
                     谢谢观看<span class="highlight">.</span>
                 </h2>
-                <p style="font-size: 17px; color: var(--gray1); margin-top: 16px;">期待与您共创未来</p>
+                <p class="thanks-sub">期待与您共创未来</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p class="footer-text">© 2025 赵金成 · AI Product Manager</p>
+        <p class="footer-text">&copy; 2025 赵金成 &middot; AI Product Manager</p>
     </footer>
 
     <!-- JavaScript -->
@@ -1442,9 +1376,9 @@
             qaToggle.classList.toggle('active');
 
             if (qaContent.classList.contains('show')) {
-                qaToggle.innerHTML = '收起AI探索 ▲';
+                qaToggle.innerHTML = '收起AI探索 <span class="chevron">&#9650;</span>';
             } else {
-                qaToggle.innerHTML = '展开AI探索 ▼';
+                qaToggle.innerHTML = '展开AI探索 <span class="chevron">&#9660;</span>';
             }
         });
     </script>
