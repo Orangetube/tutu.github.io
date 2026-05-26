@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵金成 - AI产品经理</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -25,11 +22,12 @@
             --gray5: #f9fafb;
             --border: #f0f0f0;
             --blue: #2563eb;
-            --blue-light: #eff6ff;
+            --blue-light: #60a5fa;
             --green: #15803d;
             --green-bg: #f0fdf4;
             --green-border: #bbf7d0;
             --purple: #7c3aed;
+            --purple-light: #a78bfa;
         }
 
         html {
@@ -37,7 +35,7 @@
         }
 
         body {
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
             background: var(--white);
             color: var(--black);
             line-height: 1.6;
@@ -148,6 +146,23 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
+        /* ===== Pulse Animation for Badge ===== */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s ease-in-out infinite;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
         /* ===== Hero Section ===== */
         .hero {
             background: var(--white);
@@ -187,13 +202,14 @@
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
+        /* Eyebrow: AI PRODUCT MANAGER - tightly above name */
         .hero-eyebrow {
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.1em;
             color: var(--gray2);
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .hero-headline {
@@ -226,13 +242,14 @@
             color: var(--black);
         }
 
+        /* Green Badge with pulse dot */
         .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            background: var(--green-bg);
-            color: var(--green);
-            border: 1px solid var(--green-border);
+            gap: 0;
+            background: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
             border-radius: 999px;
             padding: 6px 16px;
             font-size: 13px;
@@ -245,7 +262,7 @@
             flex-wrap: wrap;
             gap: 20px;
             font-size: 14px;
-            color: var(--gray1);
+            color: #6b7280;
         }
 
         .hero-contact span {
@@ -282,13 +299,13 @@
         .edu-school {
             font-size: 16px;
             font-weight: 700;
-            color: var(--black);
+            color: #111827;
             margin-bottom: 4px;
         }
 
         .edu-major {
             font-size: 14px;
-            color: var(--gray1);
+            color: #6b7280;
             margin-bottom: 2px;
         }
 
@@ -301,8 +318,8 @@
 
         .edu-tag {
             font-size: 12px;
-            color: var(--gray2);
-            background: var(--gray4);
+            color: #9ca3af;
+            background: #f3f4f6;
             padding: 2px 8px;
             border-radius: 4px;
         }
@@ -342,8 +359,8 @@
 
         .career-period {
             display: inline-block;
-            background: var(--gray4);
-            color: var(--gray1);
+            background: #f3f4f6;
+            color: #6b7280;
             border-radius: 6px;
             padding: 4px 10px;
             font-size: 12px;
@@ -388,13 +405,13 @@
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: var(--gray3);
+            background: #d1d5db;
         }
 
         .career-achievements li .metric {
             font-size: 15px;
             font-weight: 700;
-            color: var(--blue);
+            color: #2563eb;
         }
 
         /* ===== Insights Section ===== */
@@ -539,6 +556,7 @@
             flex-wrap: wrap;
         }
 
+        /* Flow nodes - tech feel */
         .flow-node {
             background: var(--white);
             border: 1px solid var(--border);
@@ -557,10 +575,10 @@
         }
 
         .flow-node.primary {
-            background: var(--blue);
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
             border-color: transparent;
             color: white;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
         }
 
         .flow-node.primary .node-label {
@@ -568,10 +586,10 @@
         }
 
         .flow-node.ai {
-            background: var(--purple);
+            background: linear-gradient(135deg, #7c3aed, #a78bfa);
             border-color: transparent;
             color: white;
-            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
         }
 
         .flow-node.ai .node-label {
@@ -589,11 +607,15 @@
             color: var(--black);
         }
 
+        /* Elegant arrow */
         .flow-arrow {
             font-size: 20px;
             color: var(--gray3);
+            margin: 0 4px;
+            letter-spacing: 2px;
         }
 
+        /* Stats - big impact */
         .diagram-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -602,18 +624,24 @@
         }
 
         .stat-box {
-            background: var(--white);
+            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px 20px;
             text-align: center;
             border: 1px solid var(--border);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .stat-number {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--blue);
+            font-size: 30px;
+            font-weight: 800;
+            color: #111827;
             line-height: 1;
         }
 
@@ -627,7 +655,7 @@
         .stat-label {
             font-size: 12px;
             color: var(--gray2);
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .product-body {
@@ -1027,7 +1055,7 @@
                     </h1>
                     <div class="hero-title-row">
                         <p class="hero-title">7年深耕产品专岗 · AI赋能工作资深实践者</p>
-                        <span class="status-badge">&#10003; 离职，随时到岗</span>
+                        <span class="status-badge"><span class="pulse-dot"></span>离职，随时到岗</span>
                     </div>
                     <div class="hero-contact">
                         <span>&#128241; 186-4980-2400</span>
