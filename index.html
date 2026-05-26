@@ -159,10 +159,11 @@
         }
 
         .hero-profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
+            width: auto;
+            height: auto;
+            max-width: 160px;
+            border-radius: 12px;
+            object-fit: contain;
             flex-shrink: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
@@ -1115,26 +1116,6 @@
             </div>
 
             <!-- Advantages (Merged Section) -->
-            <div class="hero-advantages fade-in">
-                <div class="advantages-grid">
-                    <div class="advantage-card">
-                        <div class="advantage-icon advantage-icon-1">🚀</div>
-                        <div class="advantage-title">全周期产品经验</div>
-                        <p class="advantage-desc">7年深耕，从需求构思到落地交付</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon advantage-icon-2">🤖</div>
-                        <div class="advantage-title">AI赋能专家</div>
-                        <p class="advantage-desc">核心业务环节效率提升60%+</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon advantage-icon-3">💪</div>
-                        <div class="advantage-title">韧性交付</div>
-                        <p class="advantage-desc">高压环境下稳定输出，持续拓展能力边界</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Career Highlights -->
             <div class="hero-career" id="career">
                 <div class="career-title">工作经历</div>
@@ -1165,47 +1146,6 @@
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section class="achievements-section" id="achievements">
-        <div class="achievements-header">
-            <p class="section-eyebrow">Business Impact</p>
-            <h2 class="section-headline">业务成果</h2>
-            <p class="section-subhead centered">用数据说话，量化产品价值与商业贡献。</p>
-        </div>
-        <div class="achievements-grid">
-            <div class="achievement-card highlight">
-                <div class="achievement-number">60%+</div>
-                <div class="achievement-label">核心业务效率提升</div>
-                <div class="achievement-desc">全链路AI产品自主搭建，从需求构思到落地交付，使核心业务环节效率提升60%以上</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-number">40%+</div>
-                <div class="achievement-label">开发周期缩短</div>
-                <div class="achievement-desc">引入飞书敏捷开发框架，将产品从需求到上线的完整开发周期缩短40%以上</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-number">80%</div>
-                <div class="achievement-label">数据处理效率提升</div>
-                <div class="achievement-desc">情报分析系统引入AI技术实现多源数据自动化清洗，数据处理效率提升80%</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-number">50%</div>
-                <div class="achievement-label">酒吧市场品牌服务增长</div>
-                <div class="achievement-desc">星网锐捷期间深入一线调研优化营销场景，驱动酒吧市场品牌服务同比增长50%，销售额增长40%</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-number">90%</div>
-                <div class="achievement-label">需求采纳率</div>
-                <div class="achievement-desc">精准抽象业务逻辑并输出创新原型，6个月内推动近1000个项目成功落地</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-number">90+</div>
-                <div class="achievement-label">每日稳定运行任务</div>
-                <div class="achievement-desc">C端APP独立开发与运营，建立标准化任务调度与监控体系，确保每日90+业务任务稳定有序运行</div>
-            </div>
-        </div>
-    </section>
-
     <!-- Insights Section -->
     <section class="insights-section" id="insights">
         <div class="insights-header">
@@ -1226,46 +1166,6 @@
                 <h3 class="insight-title">先于业务的数据洞察</h3>
                 <p class="insight-desc">
                     数据分析工作<span class="insight-highlight">先于业务一步</span>，主动发现业务机会与效率瓶颈。通过AI数据分析平台帮助业务提升工作效率，从原本每季度一次的分析提升到周度甚至日常分析，让数据真正驱动业务决策。
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collaboration Section -->
-    <section class="collab-section" id="collab">
-        <div class="collab-header">
-            <p class="section-eyebrow">Cross-functional Collaboration</p>
-            <h2 class="section-headline">跨团队协作</h2>
-            <p class="section-subhead centered">整合多方资源，发挥各自优势，实现最大投入产出比。</p>
-        </div>
-        <div class="collab-content">
-            <div class="collab-diagram">
-                <div class="collab-center">
-                    <div class="collab-core">AI产品经理<br>协调中枢</div>
-                </div>
-                <div class="collab-teams">
-                    <div class="collab-team">
-                        <div class="collab-team-icon">🧠</div>
-                        <div class="collab-team-name">算法部</div>
-                    </div>
-                    <div class="collab-team">
-                        <div class="collab-team-icon">💻</div>
-                        <div class="collab-team-name">前后端开发</div>
-                    </div>
-                    <div class="collab-team">
-                        <div class="collab-team-icon">📱</div>
-                        <div class="collab-team-name">产品部</div>
-                    </div>
-                    <div class="collab-team">
-                        <div class="collab-team-icon">🤝</div>
-                        <div class="collab-team-name">业务方</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collab-case">
-                <h3 class="collab-case-title">商品拍立得项目：AI与算法的完美融合</h3>
-                <p class="collab-case-desc">
-                    在朴朴期间，为更好使用公司AI资源，<span class="product-highlight">横跨算法部、前后端、产品部与业务方</span>进行多方协调沟通。商品拍立得项目是AI与算法完美融合的典型案例——引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用AI补齐能力短板，用既有算法保证准确率，发挥各自优势，达到最大投入产出比，实现业务价值的"降维打击"。
                 </p>
             </div>
         </div>
