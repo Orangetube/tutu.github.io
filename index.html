@@ -1025,6 +1025,319 @@
                 gap: 8px;
             }
         }
+
+/* ===== STAR Case Study Components ===== */
+
+/* Challenge Card - 橘色警示风格 */
+.challenge-card {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    position: relative;
+}
+
+.challenge-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #c2410c;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.challenge-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #f97316;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.challenge-text {
+    font-size: 14px;
+    color: #9a3412;
+    line-height: 1.7;
+}
+
+.challenge-text strong {
+    color: #c2410c;
+}
+
+/* Thinking Card - 蓝色逻辑风格 */
+.thinking-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+}
+
+.thinking-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d4ed8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.thinking-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #2563eb;
+    border-radius: 50%;
+}
+
+.thinking-text {
+    font-size: 14px;
+    color: #1e3a5f;
+    line-height: 1.7;
+}
+
+.thinking-text strong {
+    color: #1d4ed8;
+}
+
+/* Action Steps - 步骤条 */
+.action-steps {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.action-step {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.action-step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.step-desc {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Iteration Timeline - 迭代时间线 */
+.iteration-timeline {
+    margin: 20px 0;
+    position: relative;
+    padding-left: 32px;
+}
+
+.iteration-timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, #d1d5db, #e5e7eb);
+}
+
+.iteration-item {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.iteration-item:last-child {
+    margin-bottom: 0;
+}
+
+.iteration-dot {
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+}
+
+.iteration-dot.fail {
+    background: #f97316;
+    box-shadow: 0 0 0 4px #fff7ed;
+}
+
+.iteration-dot.pivot {
+    background: #8b5cf6;
+    box-shadow: 0 0 0 4px #f5f3ff;
+}
+
+.iteration-dot.success {
+    background: #22c55e;
+    box-shadow: 0 0 0 4px #f0fdf4;
+}
+
+.iteration-phase {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+}
+
+.iteration-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.iteration-body {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.iteration-challenge {
+    background: #fff7ed;
+    border-left: 3px solid #f97316;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #9a3412;
+    line-height: 1.6;
+}
+
+.iteration-challenge::before {
+    content: '\26A0 ';
+}
+
+.iteration-insight {
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #1e3a5f;
+    line-height: 1.6;
+}
+
+.iteration-insight::before {
+    content: '\1F4A1 ';
+}
+
+/* Result Card */
+.result-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+}
+
+.result-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #15803d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.result-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+.result-text {
+    font-size: 14px;
+    color: #166534;
+    line-height: 1.7;
+}
+
+/* Section divider in product body */
+.product-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-section-title .section-icon {
+    font-size: 18px;
+}
+
+/* Responsive for new components */
+@media (max-width: 834px) {
+    .iteration-timeline {
+        padding-left: 28px;
+    }
+
+    .iteration-dot {
+        left: -28px;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .action-step {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1198,25 +1511,66 @@
                 </div>
 
                 <div class="product-body">
-                    <h4>业务背景</h4>
+                    <!-- 业务背景 -->
+                    <div class="product-section-title"><span class="section-icon">&#128203;</span> 业务背景</div>
                     <p>
-                        <strong>痛点：</strong>业务方高层在超市等线下场景进行市场调研和竞品比价时，传统的"打开APP → 搜索框输入商品名 → 筛选匹配商品 → 记录价格"路径极其繁琐。如果一次调研10款商品，该链路需要重复10次，严重影响高层决策效率。
-                    </p>
-                    <p>
-                        <strong>挑战：</strong>需求由核心高层提出，时效性要求极高。且当时公司内部的"拍照识别"原生算法仍在开发阶段，预计需2-3个月。
+                        业务方高层在超市等线下场景进行市场调研和竞品比价时，传统的"打开APP → 搜索框输入商品名 → 筛选匹配商品 → 记录价格"路径极其繁琐。如果一次调研10款商品，该链路需要重复10次，严重影响高层决策效率。
                     </p>
 
-                    <h4>核心行动</h4>
-                    <ul>
-                        <li><strong>敏捷架构选型：</strong>利用飞书微应用生态进行能力组装——飞书多维表格作为数据库，飞书消息卡片作为前端，飞书机器人作为交付载体。前端开发工作量降为零。</li>
-                        <li><strong>混合方案设计：</strong>引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用AI补齐能力短板，用既有算法保证准确率。</li>
-                        <li><strong>数据飞轮机制：</strong>设计端到端的用户反馈机制，在消息卡片上配置"打分评价"和"不满意原因反馈"，定期对Badcase归因分析，推动AI Prompt调整或算法迭代。</li>
-                    </ul>
+                    <!-- 核心挑战 -->
+                    <div class="product-section-title"><span class="section-icon">&#9889;</span> 核心挑战</div>
+                    <div class="challenge-card">
+                        <div class="challenge-label">核心挑战</div>
+                        <div class="challenge-text">
+                            <strong>挑战一：时效性 vs 研发周期的矛盾。</strong>需求由核心高层提出，时效性要求极高，但公司内部的"拍照识别"原生算法仍在开发阶段，预计需要 <strong>2-3 个月</strong> 才能交付，远无法满足业务方的紧急诉求。
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-text">
+                            <strong>挑战二：极端场景下的准确率保障。</strong>线下调研场景复杂——光照不均、商品品类繁杂、包装角度多变，如何在非标准化环境下确保 AI 识别与商品匹配的准确率，是技术方案必须回答的问题。
+                        </div>
+                    </div>
 
-                    <h4>项目成果</h4>
-                    <p>
-                        全链路从需求调研到上线仅耗时<span class="product-highlight">1个月</span>，比常规开发排期缩短60%以上。产品上线后获得业务方高层高度评价，成为公司内部AI轻量化落地的标杆案例。
-                    </p>
+                    <!-- 思考与解决 -->
+                    <div class="product-section-title"><span class="section-icon">&#129504;</span> 思考与解决</div>
+                    <div class="thinking-card">
+                        <div class="thinking-label">核心思考</div>
+                        <div class="thinking-text">
+                            <strong>不要重新造轮子，用"解耦和组装"的思维破局。</strong>与其等待内部算法漫长的研发周期，不如思考：公司有哪些<strong>现成能力</strong>可以组合？外部有哪些<strong>成熟技术</strong>可以借用？关键是用最少的开发投入，最快地验证业务价值。
+                        </div>
+                    </div>
+                    <div class="action-steps">
+                        <div class="action-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">前端开发量降为零</div>
+                                <div class="step-desc">利用飞书微应用生态进行能力组装——飞书多维表格作为数据库，飞书消息卡片作为前端，飞书机器人作为交付载体。无需写一行前端代码，极大压缩开发周期。</div>
+                            </div>
+                        </div>
+                        <div class="action-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">AI + 既有算法的混合方案</div>
+                                <div class="step-desc">引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用 AI 的灵活性补齐内部研发周期长的短板，用既有算法保证准确率。</div>
+                            </div>
+                        </div>
+                        <div class="action-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">设计数据飞轮闭环</div>
+                                <div class="step-desc">在消息卡片上配置"打分评价"和"不满意原因反馈"，主动捕捉 Badcase，定期归因分析，推动 AI Prompt 敏捷迭代，形成"使用 → 反馈 → 优化"的正向循环。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目成果 -->
+                    <div class="product-section-title"><span class="section-icon">&#127942;</span> 项目成果</div>
+                    <div class="result-card">
+                        <div class="result-label">项目成果</div>
+                        <div class="result-text">
+                            全链路从需求调研到上线仅耗时 <strong>1个月</strong>，比常规开发排期缩短 <strong>60%</strong> 以上。产品上线后获得业务方高层高度评价，成为公司内部 AI 轻量化落地的标杆案例。
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1264,30 +1618,66 @@
                 </div>
 
                 <div class="product-body">
-                    <h4>项目背景</h4>
+                    <!-- 项目背景 -->
+                    <div class="product-section-title"><span class="section-icon">&#128203;</span> 项目背景</div>
                     <p>
                         业务线积累了海量时间序列数据和商品价格数据，但所有分析工作都由业务人员手动完成，只能每季度做一次全面分析，日常和周度分析几乎空白，导致很多业务机会被错过。
                     </p>
 
-                    <h4>三次技术方案迭代</h4>
-                    <p><strong>第一阶段：文件上传 + 上下文注入</strong></p>
-                    <p>让业务人员上传CSV数据文件，将数据作为上下文输入大模型分析。验证了可行性，但受限于当时的上下文窗口大小，数据量稍大就会出现分析错误。</p>
+                    <!-- 三次迭代 - 用时间线展示 -->
+                    <div class="product-section-title"><span class="section-icon">&#128260;</span> 三次方案迭代：遇到困难 → 思考 → 解决</div>
+                    <div class="iteration-timeline">
+                        <!-- 第一阶段 -->
+                        <div class="iteration-item">
+                            <div class="iteration-dot fail">1</div>
+                            <div class="iteration-phase">第一阶段 · 验证可行性</div>
+                            <div class="iteration-title">文件上传 + 上下文注入</div>
+                            <div class="iteration-body">
+                                让业务人员上传 CSV 数据文件，将数据作为上下文直接输入大模型进行分析。初步验证了 AI 分析的可行性，但很快遇到了瓶颈。
+                            </div>
+                            <div class="iteration-challenge">
+                                受限于当时大模型的上下文窗口（Context Window）大小，数据量稍大就会出现分析错误甚至幻觉，完全无法满足实际业务的数据规模需求。
+                            </div>
+                        </div>
 
-                    <p><strong>第二阶段：NL2SQL + 数据库直连</strong></p>
-                    <p>引入自然语言转SQL技术，用户用自然语言提问，系统自动生成SQL查询数据库。但遇到上下文爆炸瓶颈——查询结果包含数千条数据时，大模型无法处理。</p>
+                        <!-- 第二阶段 -->
+                        <div class="iteration-item">
+                            <div class="iteration-dot pivot">2</div>
+                            <div class="iteration-phase">第二阶段 · 架构转折</div>
+                            <div class="iteration-title">NL2SQL + 数据库直连</div>
+                            <div class="iteration-body">
+                                引入自然语言转 SQL 技术，用户用自然语言提问，系统自动生成 SQL 查询数据库。绕开了上下文窗口限制，但新的问题随之而来。
+                            </div>
+                            <div class="iteration-challenge">
+                                遇到"上下文爆炸"瓶颈——当 SQL 查询结果包含数千条原始数据时，大模型依然无法有效处理和分析，输出质量急剧下降。
+                            </div>
+                            <div class="iteration-insight">
+                                转折思考：直接把海量原始数据丢给大模型，这条路走不通。必须重新审视大模型的能力边界。
+                            </div>
+                        </div>
 
-                    <p><strong>第三阶段：特征提取 + AI分析（最终方案）</strong></p>
-                    <p>重新思考大模型能力边界：擅长基于结构化特征进行推理，不擅长处理海量原始数据。方案：</p>
-                    <ul>
-                        <li>先通过SQL提取数据的核心统计特征（总量、分类数量、最大/最小/平均值/标准差、时间范围等）</li>
-                        <li>再将高度浓缩的特征值输入大模型进行分析解读</li>
-                    </ul>
-                    <p>成功解决上下文爆炸问题，满足业务方<span class="product-highlight">80%</span>的基础数据分析需求。</p>
+                        <!-- 第三阶段 -->
+                        <div class="iteration-item">
+                            <div class="iteration-dot success">3</div>
+                            <div class="iteration-phase">第三阶段 · 终局方案</div>
+                            <div class="iteration-title">特征提取 + AI分析（最终方案）</div>
+                            <div class="iteration-body">
+                                重新思考大模型能力边界：<strong>大模型擅长基于结构化特征进行逻辑推理，不擅长直接处理海量原始数字。</strong>因此转变架构思路：
+                            </div>
+                            <div class="iteration-insight">
+                                先通过 SQL 在后端提取数据的核心统计特征（总量、分类数量、最大/最小/平均值/标准差、时间范围等高度浓缩值），再将这些特征输入大模型进行分析解读。用"特征工程"替代"原始数据灌入"，彻底解决上下文爆炸问题。
+                            </div>
+                        </div>
+                    </div>
 
-                    <h4>个人收获</h4>
-                    <p>
-                        最大收获是真正理解了<span class="product-highlight">大模型的能力边界</span>：不是所有问题都适合用AI解决，AI产品经理最重要的能力是找到"业务需求"与"AI能力"的最佳结合点。
-                    </p>
+                    <!-- 项目成果 -->
+                    <div class="product-section-title"><span class="section-icon">&#127942;</span> 项目成果</div>
+                    <div class="result-card">
+                        <div class="result-label">项目成果</div>
+                        <div class="result-text">
+                            最终方案成功满足业务方 <strong>80%</strong> 的基础数据分析需求，将分析频率从"每季度一次"提升到"日常随时"。最大收获是真正理解了<strong>大模型的能力边界</strong>：不是所有问题都适合用 AI 解决，AI 产品经理最重要的能力是找到"业务需求"与"AI能力"的最佳结合点。
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
