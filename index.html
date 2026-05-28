@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵金成 - AI产品经理</title>
+    <title>ZJC - AI Product Manager</title>
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -12,22 +12,14 @@
         }
 
         :root {
-            --white: #ffffff;
-            --bg: #fafafa;
             --black: #111827;
-            --gray1: #6b7280;
+            --gray1: #4b5563;
             --gray2: #9ca3af;
             --gray3: #d1d5db;
             --gray4: #f3f4f6;
             --gray5: #f9fafb;
-            --border: #f0f0f0;
             --blue: #2563eb;
-            --blue-light: #60a5fa;
-            --green: #15803d;
-            --green-bg: #f0fdf4;
-            --green-border: #bbf7d0;
-            --purple: #7c3aed;
-            --purple-light: #a78bfa;
+            --white: #ffffff;
         }
 
         html {
@@ -35,510 +27,359 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
             background: var(--white);
             color: var(--black);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 15px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
 
-        /* ===== Global Nav ===== */
-        .globalnav {
+        /* ===== Nav ===== */
+        .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 9999;
             height: 52px;
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray4);
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        .globalnav-content {
+        .nav-inner {
             width: 100%;
-            max-width: 1024px;
+            max-width: 960px;
+            margin: 0 auto;
             padding: 0 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .globalnav-logo {
-            font-size: 18px;
-            font-weight: 600;
+        .nav-logo {
+            font-size: 16px;
+            font-weight: 700;
             color: var(--black);
             text-decoration: none;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
         }
 
-        .globalnav-links {
+        .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             list-style: none;
         }
 
-        .globalnav-links a {
+        .nav-links a {
             font-size: 13px;
-            color: var(--gray1);
+            color: var(--gray2);
             text-decoration: none;
-            transition: color 0.3s;
             font-weight: 400;
+            transition: color 0.2s;
         }
 
-        .globalnav-links a:hover {
+        .nav-links a:hover {
             color: var(--black);
         }
 
-        /* ===== Section Common ===== */
+        /* ===== Sections ===== */
         .section {
-            padding: 120px 24px;
+            padding: 100px 24px;
         }
 
-        .section-content {
-            max-width: 980px;
+        .section-inner {
+            max-width: 960px;
             margin: 0 auto;
         }
 
-        .section-headline {
-            font-size: 40px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-            color: var(--black);
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray2);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 32px;
         }
 
-        .section-subhead {
-            font-size: 17px;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--gray1);
-            margin-top: 12px;
-            max-width: 560px;
-        }
-
-        .section-subhead.centered {
-            margin-left: auto;
-            margin-right: auto;
+        /* ===== Hero ===== */
+        .hero {
+            padding: 140px 24px 80px;
             text-align: center;
         }
 
-        .section-eyebrow {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--gray2);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 8px;
-        }
-
-        /* ===== Unified Card Style ===== */
-        .card {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-
-        /* ===== Pulse Animation for Badge ===== */
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .pulse-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #22c55e;
-            animation: pulse 2s ease-in-out infinite;
-            margin-right: 6px;
-            flex-shrink: 0;
-        }
-
-        /* ===== Hero Section ===== */
-        .hero {
-            background: var(--white);
-            padding: 130px 24px 60px;
-        }
-
-        .hero-content {
-            max-width: 980px;
+        .hero-inner {
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        .hero-top {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 48px;
-            align-items: start;
-            margin-bottom: 60px;
-        }
-
-        .hero-main {
-            max-width: 580px;
-        }
-
-        .hero-right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-        }
-
-        .hero-profile {
-            width: 180px;
-            height: auto;
-            border-radius: 16px;
-            object-fit: cover;
-            flex-shrink: 0;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Eyebrow: AI PRODUCT MANAGER - tightly above name */
-        .hero-eyebrow {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            color: var(--gray2);
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .hero-headline {
-            font-size: clamp(42px, 6vw, 56px);
+        .hero-title {
+            font-size: clamp(36px, 5vw, 52px);
             font-weight: 700;
             letter-spacing: -0.03em;
-            line-height: 1.05;
+            line-height: 1.1;
             color: var(--black);
-            margin-bottom: 12px;
+            margin-bottom: 24px;
         }
 
-        .hero-headline .highlight {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-sub {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 28px;
         }
 
-        .hero-title-row {
+        .hero-tags {
             display: flex;
-            align-items: center;
-            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
         }
 
-        .hero-title {
-            font-size: 17px;
-            font-weight: 500;
-            color: var(--black);
-        }
-
-        /* Green Badge with pulse dot */
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0;
-            background: #f0fdf4;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-            border-radius: 999px;
-            padding: 6px 16px;
+        .hero-tag {
+            background: var(--gray4);
+            color: #6b7280;
             font-size: 13px;
-            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 999px;
             white-space: nowrap;
         }
 
+        .hero-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 24px;
+            display: block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
         .hero-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 14px;
-            color: #6b7280;
+            color: #9ca3af;
+            font-size: 13px;
+            line-height: 1.8;
         }
 
-        .hero-contact span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        /* ===== About ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
 
-        /* ===== Education (Compact) ===== */
-        .hero-education {
+        .about-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 40px;
+        }
+
+        .edu-header {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 60px;
-            padding: 20px 24px;
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            margin-bottom: 16px;
         }
 
         .edu-logo {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             border-radius: 10px;
             object-fit: cover;
             flex-shrink: 0;
         }
 
-        .edu-info {
-            flex: 1;
-        }
-
         .edu-school {
             font-size: 16px;
             font-weight: 700;
-            color: #111827;
-            margin-bottom: 4px;
+            color: var(--black);
         }
 
         .edu-major {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 2px;
-        }
-
-        .edu-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 6px;
+            font-size: 13px;
+            color: var(--gray2);
+            margin-bottom: 8px;
         }
 
         .edu-tag {
+            display: inline-block;
             font-size: 12px;
-            color: #9ca3af;
-            background: #f3f4f6;
-            padding: 2px 8px;
+            color: var(--gray2);
+            background: var(--gray4);
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-right: 6px;
+        }
+
+        .career-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .career-list li {
+            font-size: 14px;
+            color: var(--gray1);
+            line-height: 1.8;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .career-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--gray3);
+        }
+
+        .career-list li strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .career-list .career-period {
+            font-size: 12px;
+            color: var(--gray2);
+            font-weight: 400;
+        }
+
+        .career-list .career-company {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        .skill-tag {
+            font-size: 12px;
+            color: var(--gray1);
+            background: var(--gray4);
+            padding: 4px 10px;
             border-radius: 4px;
         }
 
-        /* ===== Career Timeline ===== */
-        .hero-career {
-            padding-top: 60px;
-            border-top: 1px solid var(--border);
+        /* ===== Cases ===== */
+        .cases-section {
+            background: var(--gray5);
         }
 
-        .career-title {
-            font-size: 12px;
+        .case-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+
+        .case-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-header {
+            margin-bottom: 32px;
+        }
+
+        .case-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .case-meta {
+            font-size: 13px;
+            color: var(--gray2);
+        }
+
+        .case-meta span {
+            margin-right: 16px;
+        }
+
+        .case-section {
+            margin-bottom: 28px;
+        }
+
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-section-title {
+            font-size: 13px;
             font-weight: 600;
             color: var(--gray2);
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            margin-bottom: 24px;
-        }
-
-        .career-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .career-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 28px;
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            min-height: 280px;
-        }
-
-        .career-period {
-            display: inline-block;
-            background: #f3f4f6;
-            color: #6b7280;
-            border-radius: 6px;
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 12px;
-            width: fit-content;
-        }
-
-        .career-company {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 4px;
-        }
-
-        .career-role {
-            font-size: 13px;
-            color: var(--gray1);
-            margin-bottom: 16px;
-        }
-
-        .career-achievements {
-            list-style: none;
-            padding: 0;
-            flex: 1;
-        }
-
-        .career-achievements li {
-            font-size: 13px;
-            color: var(--gray1);
-            line-height: 1.6;
-            padding-left: 16px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .career-achievements li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #d1d5db;
-        }
-
-        .career-achievements li .metric {
-            font-size: 15px;
-            font-weight: 700;
-            color: #2563eb;
-        }
-
-        /* ===== Insights Section ===== */
-        .insights-section {
-            background: var(--bg);
-            padding: 120px 24px;
-        }
-
-        .insights-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .insight-card {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            padding: 32px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .insight-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .insight-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 16px;
-        }
-
-        .insight-icon-1 { background: #fef2f2; }
-        .insight-icon-2 { background: #f0fdfa; }
-
-        .insight-title {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--black);
             margin-bottom: 12px;
         }
 
-        .insight-desc {
+        .case-section p {
             font-size: 14px;
             color: var(--gray1);
             line-height: 1.75;
         }
 
-        .insight-highlight {
-            display: inline;
-            font-weight: 600;
-            color: var(--blue);
+        .case-section ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* ===== Products Section ===== */
-        .products-section {
-            background: var(--white);
-            padding: 120px 24px;
-        }
-
-        .products-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            padding: 48px;
-            margin-bottom: 24px;
-        }
-
-        .product-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .product-eyebrow {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--blue);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 8px;
-        }
-
-        .product-name {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .product-tagline {
-            font-size: 15px;
+        .case-section ul li {
+            font-size: 14px;
             color: var(--gray1);
-            margin-bottom: 32px;
-            font-style: italic;
-            line-height: 1.6;
+            line-height: 1.75;
+            padding-left: 12px;
+            position: relative;
         }
 
-        /* Product Diagram */
-        .product-diagram {
+        .case-section ul li::before {
+            content: '\00B7';
+            position: absolute;
+            left: 0;
+            color: var(--gray3);
+            font-weight: 700;
+        }
+
+        /* Highlight card */
+        .highlight-card {
+            background: #eff6ff;
+            border-left: 3px solid var(--blue);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            font-size: 14px;
+            color: #1e3a5f;
+            line-height: 1.75;
+        }
+
+        /* Diagram */
+        .diagram {
             background: var(--gray5);
             border-radius: 16px;
             padding: 32px;
-            margin: 28px 0;
-            border: 1px solid var(--border);
+            margin: 20px 0;
+            border: 1px solid #f0f0f0;
         }
 
-        .diagram-title {
+        .diagram-label {
             font-size: 12px;
             font-weight: 600;
             color: var(--gray2);
@@ -556,67 +397,52 @@
             flex-wrap: wrap;
         }
 
-        /* Flow nodes - tech feel */
         .flow-node {
             background: var(--white);
-            border: 1px solid var(--border);
+            border: 1px solid #f0f0f0;
             border-radius: 12px;
             padding: 16px 20px;
             text-align: center;
             min-width: 100px;
-            transition: all 0.3s;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
-        .flow-node:hover {
-            border-color: var(--blue);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        }
-
         .flow-node.primary {
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            background: var(--blue);
             border-color: transparent;
             color: white;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
-        }
-
-        .flow-node.primary .node-label {
-            color: white;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
         }
 
         .flow-node.ai {
-            background: linear-gradient(135deg, #7c3aed, #a78bfa);
+            background: #7c3aed;
             border-color: transparent;
             color: white;
-            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
         }
 
-        .flow-node.ai .node-label {
-            color: white;
-        }
-
-        .node-icon {
-            font-size: 24px;
+        .flow-node .node-icon {
+            font-size: 22px;
             margin-bottom: 6px;
         }
 
-        .node-label {
+        .flow-node .node-label {
             font-size: 13px;
             font-weight: 600;
             color: var(--black);
         }
 
-        /* Elegant arrow */
-        .flow-arrow {
-            font-size: 20px;
-            color: var(--gray3);
-            margin: 0 4px;
-            letter-spacing: 2px;
+        .flow-node.primary .node-label,
+        .flow-node.ai .node-label {
+            color: white;
         }
 
-        /* Stats - big impact */
-        .diagram-stats {
+        .flow-arrow {
+            font-size: 18px;
+            color: var(--gray3);
+        }
+
+        .stat-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
@@ -624,32 +450,19 @@
         }
 
         .stat-box {
-            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+            background: var(--white);
             border-radius: 12px;
-            padding: 24px 20px;
+            padding: 20px 16px;
             text-align: center;
-            border: 1px solid var(--border);
+            border: 1px solid #f0f0f0;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .stat-number {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 800;
-            color: #111827;
+            color: var(--black);
             line-height: 1;
-        }
-
-        .stat-number .stat-unit {
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--gray1);
-            margin-left: 2px;
         }
 
         .stat-label {
@@ -658,58 +471,127 @@
             margin-top: 8px;
         }
 
-        .product-body {
+        /* Result line */
+        .result-line {
             font-size: 14px;
-            line-height: 1.75;
-            color: var(--gray1);
+            color: #166534;
+            line-height: 1.7;
+            padding: 16px 20px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            border: 1px solid #bbf7d0;
         }
 
-        .product-body h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--black);
-            margin: 28px 0 12px;
+        /* Product image */
+        .case-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 16px 0;
+            border: 1px solid #f0f0f0;
         }
 
-        .product-body h4:first-child {
-            margin-top: 0;
-        }
-
-        .product-body p {
-            margin-bottom: 12px;
-        }
-
-        .product-body ul {
-            margin: 12px 0;
-            padding-left: 20px;
-        }
-
-        .product-body li {
-            margin-bottom: 8px;
-        }
-
-        .product-body strong {
-            color: var(--black);
-        }
-
-        .product-highlight {
-            display: inline;
-            font-weight: 600;
-            color: var(--blue);
-        }
-
-        /* ===== Q&A Section ===== */
-        .qa-section {
-            background: var(--bg);
-            padding: 120px 24px;
-        }
-
-        .qa-header {
+        .case-image-caption {
+            font-size: 12px;
+            color: var(--gray2);
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
         }
 
-        .qa-toggle-btn {
+        /* Iteration timeline */
+        .iteration-timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .iteration-timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--gray4);
+        }
+
+        .iteration-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .iteration-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .iteration-dot {
+            position: absolute;
+            left: -32px;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            z-index: 1;
+        }
+
+        .iteration-dot.fail { background: #f97316; }
+        .iteration-dot.pivot { background: #8b5cf6; }
+        .iteration-dot.success { background: #22c55e; }
+
+        .iteration-phase {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray2);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+
+        .iteration-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 6px;
+        }
+
+        .iteration-body {
+            font-size: 13px;
+            color: var(--gray1);
+            line-height: 1.7;
+        }
+
+        .iteration-challenge {
+            background: #fff7ed;
+            border-left: 3px solid #f97316;
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            margin: 8px 0;
+            font-size: 13px;
+            color: #9a3412;
+            line-height: 1.6;
+        }
+
+        .iteration-insight {
+            background: #eff6ff;
+            border-left: 3px solid var(--blue);
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            margin: 8px 0;
+            font-size: 13px;
+            color: #1e3a5f;
+            line-height: 1.6;
+        }
+
+        /* ===== Thinking ===== */
+        .thinking-section {
+            background: var(--white);
+        }
+
+        .thinking-toggle {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -717,220 +599,89 @@
             color: var(--white);
             border: none;
             border-radius: 999px;
-            padding: 12px 28px;
-            font-size: 14px;
+            padding: 10px 24px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s;
             font-family: inherit;
+            transition: background 0.2s;
+            margin-bottom: 24px;
         }
 
-        .qa-toggle-btn:hover {
+        .thinking-toggle:hover {
             background: #374151;
-            transform: scale(1.02);
         }
 
-        .qa-toggle-btn .chevron {
+        .thinking-toggle .chevron {
             transition: transform 0.3s;
+            font-size: 11px;
         }
 
-        .qa-toggle-btn.active .chevron {
+        .thinking-toggle.active .chevron {
             transform: rotate(180deg);
         }
 
-        .qa-content {
-            max-width: 780px;
-            margin: 0 auto;
+        .thinking-list {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease, opacity 0.3s ease;
             opacity: 0;
         }
 
-        .qa-content.show {
+        .thinking-list.show {
             max-height: 2000px;
             opacity: 1;
         }
 
-        .qa-item {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            padding: 24px 28px;
-            margin-bottom: 12px;
-        }
-
-        .qa-item:last-child {
+        .thinking-item {
+            padding: 20px 0 20px 20px;
+            border-left: 2px solid var(--gray4);
             margin-bottom: 0;
         }
 
-        .qa-question {
+        .thinking-item + .thinking-item {
+            border-top: 1px solid var(--gray4);
+            padding-top: 20px;
+        }
+
+        .thinking-item:last-child {
+            border-bottom: none;
+        }
+
+        .thinking-q {
             font-size: 15px;
             font-weight: 600;
             color: var(--black);
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .qa-question::before {
-            content: 'Q';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--blue);
-            color: var(--white);
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ===== Commitment Section ===== */
-        .commitment-section {
-            background: var(--white);
-            padding: 120px 24px;
-            text-align: center;
-        }
-
-        .commitment-content {
-            max-width: 780px;
-            margin: 0 auto;
-        }
-
-        .commitment-quote {
-            font-size: clamp(22px, 3.5vw, 30px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.35;
-            color: var(--black);
-            margin-top: 24px;
-            margin-bottom: 40px;
-        }
-
-        .commitment-quote .gradient-text {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .commitment-points {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 40px;
-        }
-
-        .commitment-point {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            padding: 28px 24px;
-            text-align: left;
-        }
-
-        .commitment-point-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .commitment-point-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 8px;
-        }
-
-        .commitment-point-desc {
-            font-size: 13px;
-            color: var(--gray1);
             line-height: 1.6;
         }
 
-        /* ===== Vision Section ===== */
-        .vision-section {
-            background: var(--bg);
-            padding: 140px 24px;
-            text-align: center;
-        }
-
-        .vision-content {
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        .vision-quote {
-            font-size: clamp(26px, 4vw, 36px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: var(--black);
-            margin-bottom: 20px;
-        }
-
-        .vision-quote .gradient-text {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .vision-desc {
-            font-size: 16px;
-            color: var(--gray1);
-            line-height: 1.7;
-        }
-
-        .thanks-block {
-            margin-top: 80px;
-        }
-
-        .thanks-title {
-            font-size: clamp(36px, 5vw, 52px);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            color: var(--black);
-        }
-
-        .thanks-title .highlight {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .thanks-sub {
-            font-size: 16px;
-            color: var(--gray1);
-            margin-top: 16px;
-        }
-
         /* ===== Footer ===== */
-        footer {
-            padding: 24px;
-            background: var(--white);
-            border-top: 1px solid var(--border);
+        .footer {
+            padding: 40px 24px;
             text-align: center;
+            border-top: 1px solid var(--gray4);
         }
 
         .footer-text {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--gray2);
+            line-height: 1.8;
         }
 
-        /* ===== Animations ===== */
+        .footer-text a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Fade-in ===== */
         .fade-in {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in.visible {
@@ -940,34 +691,24 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 834px) {
-            .globalnav-links {
+            .nav-links {
                 display: none;
             }
 
-            .hero-top {
-                grid-template-columns: 1fr;
-                gap: 32px;
+            .section {
+                padding: 72px 20px;
             }
 
-            .hero-right {
-                order: -1;
-                align-items: flex-start;
+            .hero {
+                padding: 120px 20px 60px;
             }
 
-            .hero-profile {
-                width: 120px;
-            }
-
-            .career-list {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .career-item {
-                min-height: auto;
-            }
-
-            .insights-grid {
-                grid-template-columns: 1fr;
+            .case-card {
+                padding: 28px;
             }
 
             .diagram-flow {
@@ -978,823 +719,350 @@
                 transform: rotate(90deg);
             }
 
-            .diagram-stats {
+            .stat-row {
                 grid-template-columns: 1fr;
             }
 
-            .section-headline {
-                font-size: 32px;
-            }
-
-            .product-card {
-                padding: 28px;
-            }
-
-            .commitment-points {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 80px 20px;
-            }
-
-            .hero {
-                padding: 110px 20px 40px;
-            }
-
-            .insights-section,
-            .qa-section,
-            .commitment-section {
-                padding: 80px 20px;
-            }
-
-            .vision-section {
-                padding: 100px 20px;
+            .hero-tags {
+                justify-content: flex-start;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-contact {
-                flex-direction: column;
-                gap: 8px;
+            .hero-title {
+                font-size: 32px;
             }
 
-            .hero-title-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .hero-contact {
+                font-size: 12px;
             }
         }
-
-/* ===== STAR Case Study Components ===== */
-
-/* Challenge Card - 橘色警示风格 */
-.challenge-card {
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 16px 0;
-    position: relative;
-}
-
-.challenge-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #c2410c;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-}
-
-.challenge-label::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #f97316;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.challenge-text {
-    font-size: 14px;
-    color: #9a3412;
-    line-height: 1.7;
-}
-
-.challenge-text strong {
-    color: #c2410c;
-}
-
-/* Thinking Card - 蓝色逻辑风格 */
-.thinking-card {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 16px 0;
-}
-
-.thinking-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #1d4ed8;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-}
-
-.thinking-label::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #2563eb;
-    border-radius: 50%;
-}
-
-.thinking-text {
-    font-size: 14px;
-    color: #1e3a5f;
-    line-height: 1.7;
-}
-
-.thinking-text strong {
-    color: #1d4ed8;
-}
-
-/* Action Steps - 步骤条 */
-.action-steps {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.action-step {
-    display: flex;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid #e5e7eb;
-    position: relative;
-}
-
-.action-step:last-child {
-    border-bottom: none;
-}
-
-.step-number {
-    width: 28px;
-    height: 28px;
-    background: linear-gradient(135deg, #2563eb, #60a5fa);
-    color: white;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.step-content {
-    flex: 1;
-}
-
-.step-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 4px;
-}
-
-.step-desc {
-    font-size: 13px;
-    color: #6b7280;
-    line-height: 1.6;
-}
-
-/* Iteration Timeline - 迭代时间线 */
-.iteration-timeline {
-    margin: 20px 0;
-    position: relative;
-    padding-left: 32px;
-}
-
-.iteration-timeline::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 8px;
-    bottom: 8px;
-    width: 2px;
-    background: linear-gradient(180deg, #d1d5db, #e5e7eb);
-}
-
-.iteration-item {
-    position: relative;
-    margin-bottom: 24px;
-}
-
-.iteration-item:last-child {
-    margin-bottom: 0;
-}
-
-.iteration-dot {
-    position: absolute;
-    left: -32px;
-    top: 4px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
-    z-index: 1;
-}
-
-.iteration-dot.fail {
-    background: #f97316;
-    box-shadow: 0 0 0 4px #fff7ed;
-}
-
-.iteration-dot.pivot {
-    background: #8b5cf6;
-    box-shadow: 0 0 0 4px #f5f3ff;
-}
-
-.iteration-dot.success {
-    background: #22c55e;
-    box-shadow: 0 0 0 4px #f0fdf4;
-}
-
-.iteration-phase {
-    font-size: 12px;
-    font-weight: 600;
-    color: #9ca3af;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 6px;
-}
-
-.iteration-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 8px;
-}
-
-.iteration-body {
-    font-size: 13px;
-    color: #6b7280;
-    line-height: 1.7;
-}
-
-.iteration-challenge {
-    background: #fff7ed;
-    border-left: 3px solid #f97316;
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    margin: 10px 0;
-    font-size: 13px;
-    color: #9a3412;
-    line-height: 1.6;
-}
-
-.iteration-challenge::before {
-    content: '\26A0 ';
-}
-
-.iteration-insight {
-    background: #eff6ff;
-    border-left: 3px solid #2563eb;
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    margin: 10px 0;
-    font-size: 13px;
-    color: #1e3a5f;
-    line-height: 1.6;
-}
-
-.iteration-insight::before {
-    content: '\1F4A1 ';
-}
-
-/* Result Card */
-.result-card {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 16px 0;
-}
-
-.result-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #15803d;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-}
-
-.result-label::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #22c55e;
-    border-radius: 50%;
-}
-
-.result-text {
-    font-size: 14px;
-    color: #166534;
-    line-height: 1.7;
-}
-
-/* Section divider in product body */
-.product-section-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: #111827;
-    margin: 32px 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #f3f4f6;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.product-section-title .section-icon {
-    font-size: 18px;
-}
-
-/* Responsive for new components */
-@media (max-width: 834px) {
-    .iteration-timeline {
-        padding-left: 28px;
-    }
-
-    .iteration-dot {
-        left: -28px;
-        width: 20px;
-        height: 20px;
-        font-size: 10px;
-    }
-
-    .action-step {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
     </style>
 </head>
 <body>
 
-    <!-- Global Nav -->
-    <nav class="globalnav">
-        <div class="globalnav-content">
-            <a href="#" class="globalnav-logo">赵金成</a>
-            <ul class="globalnav-links">
-                <li><a href="#intro">个人介绍</a></li>
-                <li><a href="#insights">客户洞察</a></li>
-                <li><a href="#products">产品案例</a></li>
-                <li><a href="#commitment">职业承诺</a></li>
-                <li><a href="#qa">AI探索</a></li>
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">ZJC</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#thinking">Thinking</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="intro">
-        <div class="hero-content">
-            <!-- Top: Name + Status + Photo -->
-            <div class="hero-top fade-in">
-                <div class="hero-main">
-                    <p class="hero-eyebrow">AI Product Manager</p>
-                    <h1 class="hero-headline">
-                        赵金成<span class="highlight">.</span>
-                    </h1>
-                    <div class="hero-title-row">
-                        <p class="hero-title">7年深耕产品专岗 · AI赋能工作资深实践者</p>
-                        <span class="status-badge"><span class="pulse-dot"></span>离职，随时到岗</span>
-                    </div>
-                    <div class="hero-contact">
-                        <span>&#128241; 186-4980-2400</span>
-                        <span>&#9993; 602947401@qq.com</span>
-                        <span>&#128205; 福州</span>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <img src="profile.jpg" class="hero-profile" alt="赵金成">
-                </div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner fade-in">
+            <img src="profile.jpg" class="hero-photo" alt="Profile">
+            <h1 class="hero-title">AI Native Product Manager</h1>
+            <p class="hero-sub">
+                擅长利用 AI 与工作流重构企业业务流程<br>
+                专注于企业 AI 落地、Workflow Automation 与 AI 产品快速验证
+            </p>
+            <div class="hero-tags">
+                <span class="hero-tag">AI Workflow</span>
+                <span class="hero-tag">Enterprise AI</span>
+                <span class="hero-tag">Automation</span>
+                <span class="hero-tag">AI Product</span>
+                <span class="hero-tag">Multi-Agent</span>
+                <span class="hero-tag">Business Efficiency</span>
             </div>
+            <p class="hero-contact">
+                &#9993; 602947401@qq.com &nbsp;&middot;&nbsp; &#128241; 186-4980-2400 &nbsp;&middot;&nbsp; &#128205; 福州
+            </p>
+        </div>
+    </section>
 
-            <!-- Education: Compact -->
-            <div class="hero-education fade-in">
-                <img src="fzu-logo.jpg" class="edu-logo" alt="福州大学">
-                <div class="edu-info">
-                    <div class="edu-school">福州大学</div>
-                    <div class="edu-major">物联网工程（主修）· 工商管理（辅修）</div>
-                    <div class="edu-tags">
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-label fade-in">About</div>
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <div class="edu-header">
+                        <img src="fzu-logo.jpg" class="edu-logo" alt="福州大学">
+                        <div>
+                            <div class="edu-school">福州大学</div>
+                        </div>
+                    </div>
+                    <div class="edu-major">物联网工程（主修）&middot; 工商管理（辅修）</div>
+                    <div style="margin-top: 8px;">
                         <span class="edu-tag">国家"双一流"211工程</span>
                         <span class="edu-tag">远志创业实践班</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Career Timeline -->
-            <div class="hero-career fade-in" id="career">
-                <div class="career-title">工作经历</div>
-                <div class="career-list">
-                    <div class="career-item">
-                        <div>
-                            <div class="career-period">2023.08 - 2026.04</div>
-                            <div class="career-company">朴朴超市</div>
-                            <div class="career-role">数据产品经理 · 产品组 · 福州</div>
-                        </div>
-                        <ul class="career-achievements">
-                            <li>全链路AI产品自主搭建，核心业务效率提升<span class="metric">60%+</span></li>
-                            <li>引入飞书敏捷开发框架，开发周期缩短<span class="metric">40%+</span></li>
-                            <li>情报分析系统全栈搭建，数据处理效率提升<span class="metric">80%</span></li>
-                            <li>C端APP独立开发运营，每日<span class="metric">90+</span>任务稳定运行</li>
-                        </ul>
-                    </div>
-                    <div class="career-item">
-                        <div>
-                            <div class="career-period">2020.04 - 2023.08</div>
-                            <div class="career-company">星网锐捷</div>
-                            <div class="career-role">技术产品经理 · 市场部 · 福州</div>
-                        </div>
-                        <ul class="career-achievements">
-                            <li>驱动酒吧市场品牌服务同比增长<span class="metric">50%</span>，销售额增长<span class="metric">40%</span></li>
-                            <li>6个月内推动近1000个项目落地，需求采纳率<span class="metric">90%</span></li>
-                            <li>统筹三大核心产品线研发交付与数据驱动迭代</li>
-                        </ul>
+                <div class="about-card fade-in">
+                    <ul class="career-list">
+                        <li>7年产品经验，To B + AI 产品背景</li>
+                        <li><span class="career-company">朴朴超市</span> <span class="career-period">2023 - 2026</span><br>数据产品经理，AI产品落地</li>
+                        <li><span class="career-company">星网锐捷</span> <span class="career-period">2020 - 2023</span><br>技术产品经理，产品线管理</li>
+                    </ul>
+                    <div class="skills-row">
+                        <span class="skill-tag">AI Workflow 设计</span>
+                        <span class="skill-tag">企业 AI 落地</span>
+                        <span class="skill-tag">业务流程重构</span>
+                        <span class="skill-tag">敏捷交付</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section -->
-    <section class="insights-section" id="insights">
-        <div class="insights-header fade-in">
-            <p class="section-eyebrow">Customer Insights</p>
-            <h2 class="section-headline">客户洞察</h2>
-            <p class="section-subhead centered">先于业务发现问题，用AI赋能解决真实痛点。</p>
-        </div>
-        <div class="insights-grid">
-            <div class="insight-card fade-in">
-                <div class="insight-icon insight-icon-1">&#128640;</div>
-                <h3 class="insight-title">团队首个AI落地实践者</h3>
-                <p class="insight-desc">
-                    2023年底，作为团队内部<span class="insight-highlight">第一个将AI落地并赋能业务</span>的产品经理，率先探索AI在商品对比绑定场景的应用。通过商品分类搭建知识库进行模型训练，成功完成商品绑定自动化，极大解放业务工作效率，发挥AI真实价值。
-                </p>
-            </div>
-            <div class="insight-card fade-in">
-                <div class="insight-icon insight-icon-2">&#128202;</div>
-                <h3 class="insight-title">先于业务的数据洞察</h3>
-                <p class="insight-desc">
-                    数据分析工作<span class="insight-highlight">先于业务一步</span>，主动发现业务机会与效率瓶颈。通过AI数据分析平台帮助业务提升工作效率，从原本每季度一次的分析提升到周度甚至日常分析，让数据真正驱动业务决策。
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- Cases -->
+    <section class="section cases-section" id="cases">
+        <div class="section-inner">
+            <div class="section-label fade-in">Selected Cases</div>
 
-    <!-- Products Section -->
-    <section class="products-section" id="products">
-        <div class="section-content">
-            <div class="products-header fade-in">
-                <p class="section-eyebrow">Product Cases</p>
-                <h2 class="section-headline">产品案例</h2>
-                <p class="section-subhead centered">从需求到落地，用AI解决真实业务痛点。</p>
-            </div>
-
-            <!-- Product 1: AI商品拍立得 -->
-            <div class="product-card fade-in">
-                <p class="product-eyebrow">AI Product</p>
-                <h3 class="product-name">AI商品拍立得</h3>
-                <p class="product-tagline">
-                    "结合大模型多模态能力与公司既有搜索算法，通过飞书微应用生态快速落地，以极低的开发成本实现了业务流程的'降维打击'。"
-                </p>
-
-                <!-- Product Diagram -->
-                <div class="product-diagram">
-                    <div class="diagram-title">技术架构流程</div>
-                    <div class="diagram-flow">
-                        <div class="flow-node">
-                            <div class="node-icon">&#128247;</div>
-                            <div class="node-label">拍照上传</div>
-                        </div>
-                        <span class="flow-arrow">&rarr;</span>
-                        <div class="flow-node ai">
-                            <div class="node-icon">&#129504;</div>
-                            <div class="node-label">LLM Vision识别</div>
-                        </div>
-                        <span class="flow-arrow">&rarr;</span>
-                        <div class="flow-node primary">
-                            <div class="node-icon">&#128269;</div>
-                            <div class="node-label">搜索算法匹配</div>
-                        </div>
-                        <span class="flow-arrow">&rarr;</span>
-                        <div class="flow-node">
-                            <div class="node-icon">&#128172;</div>
-                            <div class="node-label">飞书卡片交付</div>
-                        </div>
+            <!-- Case 1: AI Snap Match -->
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <h3 class="case-name">AI Snap Match</h3>
+                    <div class="case-meta">
+                        <span>Enterprise AI Workflow</span>
+                        <span>1 Month Delivery</span>
+                        <span>Zero Frontend</span>
                     </div>
-                    <div class="diagram-stats">
-                        <div class="stat-box">
-                            <div class="stat-number">1个月</div>
-                            <div class="stat-label">交付周期</div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">Business Problem</div>
+                    <p>业务高层线下调研时，传统商品比价路径需重复操作10+次，决策效率极低。</p>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">Why It Was Hard</div>
+                    <ul>
+                        <li>内部拍照识别算法尚在开发，预计 2-3 个月交付</li>
+                        <li>高层需求时效性极高，无法等待常规排期</li>
+                        <li>线下场景复杂，AI识别准确率难以保障</li>
+                    </ul>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">Product Thinking</div>
+                    <div class="highlight-card">
+                        不重新造轮子。用企业已有生态（飞书）作为承载，用 LLM Vision 补齐能力短板，用既有搜索算法保证准确率。三层能力解耦组装，而非从零构建。
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">AI Solution</div>
+                    <img src="images/product1-scene.jpg" class="case-image" alt="线下超市调研场景">
+                    <p class="case-image-caption">业务场景：高层在超市进行市场调研和竞品比价</p>
+                    <div class="diagram">
+                        <div class="diagram-label">Technical Architecture</div>
+                        <div class="diagram-flow">
+                            <div class="flow-node">
+                                <div class="node-icon">&#128247;</div>
+                                <div class="node-label">拍照上传</div>
+                            </div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-node ai">
+                                <div class="node-icon">&#129504;</div>
+                                <div class="node-label">LLM Vision</div>
+                            </div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-node primary">
+                                <div class="node-icon">&#128269;</div>
+                                <div class="node-label">搜索匹配</div>
+                            </div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-node">
+                                <div class="node-icon">&#128172;</div>
+                                <div class="node-label">飞书卡片</div>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-number">60%</div>
-                            <div class="stat-label">周期缩短</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">0</div>
-                            <div class="stat-label">前端开发量</div>
+                        <div class="stat-row">
+                            <div class="stat-box">
+                                <div class="stat-number">1个月</div>
+                                <div class="stat-label">交付周期</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">60%</div>
+                                <div class="stat-label">周期缩短</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">前端开发量</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-body">
-                    <!-- 业务背景 -->
-                    <div class="product-section-title"><span class="section-icon">&#128203;</span> 业务背景</div>
-                    <p>
-                        业务方高层在超市等线下场景进行市场调研和竞品比价时，传统的"打开APP → 搜索框输入商品名 → 筛选匹配商品 → 记录价格"路径极其繁琐。如果一次调研10款商品，该链路需要重复10次，严重影响高层决策效率。
-                    </p>
-
-                    <!-- 核心挑战 -->
-                    <div class="product-section-title"><span class="section-icon">&#9889;</span> 核心挑战</div>
-                    <div class="challenge-card">
-                        <div class="challenge-label">核心挑战</div>
-                        <div class="challenge-text">
-                            <strong>挑战一：时效性 vs 研发周期的矛盾。</strong>需求由核心高层提出，时效性要求极高，但公司内部的"拍照识别"原生算法仍在开发阶段，预计需要 <strong>2-3 个月</strong> 才能交付，远无法满足业务方的紧急诉求。
-                        </div>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="challenge-text">
-                            <strong>挑战二：极端场景下的准确率保障。</strong>线下调研场景复杂——光照不均、商品品类繁杂、包装角度多变，如何在非标准化环境下确保 AI 识别与商品匹配的准确率，是技术方案必须回答的问题。
-                        </div>
-                    </div>
-
-                    <!-- 思考与解决 -->
-                    <div class="product-section-title"><span class="section-icon">&#129504;</span> 思考与解决</div>
-                    <div class="thinking-card">
-                        <div class="thinking-label">核心思考</div>
-                        <div class="thinking-text">
-                            <strong>不要重新造轮子，用"解耦和组装"的思维破局。</strong>与其等待内部算法漫长的研发周期，不如思考：公司有哪些<strong>现成能力</strong>可以组合？外部有哪些<strong>成熟技术</strong>可以借用？关键是用最少的开发投入，最快地验证业务价值。
-                        </div>
-                    </div>
-                    <div class="action-steps">
-                        <div class="action-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <div class="step-title">前端开发量降为零</div>
-                                <div class="step-desc">利用飞书微应用生态进行能力组装——飞书多维表格作为数据库，飞书消息卡片作为前端，飞书机器人作为交付载体。无需写一行前端代码，极大压缩开发周期。</div>
-                            </div>
-                        </div>
-                        <div class="action-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <div class="step-title">AI + 既有算法的混合方案</div>
-                                <div class="step-desc">引入大模型多模态能力（LLM Vision）识别商品图片，提取文本特征后输入公司成熟的搜索撮合算法进行精准匹配。用 AI 的灵活性补齐内部研发周期长的短板，用既有算法保证准确率。</div>
-                            </div>
-                        </div>
-                        <div class="action-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <div class="step-title">设计数据飞轮闭环</div>
-                                <div class="step-desc">在消息卡片上配置"打分评价"和"不满意原因反馈"，主动捕捉 Badcase，定期归因分析，推动 AI Prompt 敏捷迭代，形成"使用 → 反馈 → 优化"的正向循环。</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 项目成果 -->
-                    <div class="product-section-title"><span class="section-icon">&#127942;</span> 项目成果</div>
-                    <div class="result-card">
-                        <div class="result-label">项目成果</div>
-                        <div class="result-text">
-                            全链路从需求调研到上线仅耗时 <strong>1个月</strong>，比常规开发排期缩短 <strong>60%</strong> 以上。产品上线后获得业务方高层高度评价，成为公司内部 AI 轻量化落地的标杆案例。
-                        </div>
-                    </div>
+                <div class="case-section">
+                    <div class="case-section-title">Result</div>
+                    <div class="result-line">1个月交付，周期缩短60%，成为公司AI轻量化落地标杆。</div>
                 </div>
             </div>
 
-            <!-- Product 2: AI数据分析 -->
-            <div class="product-card fade-in">
-                <p class="product-eyebrow">AI Product</p>
-                <h3 class="product-name">AI数据分析平台</h3>
-                <p class="product-tagline">
-                    "公司首个AI数据分析落地探索项目，最早尝试将大模型能力与业务数据结合的先行项目。"
-                </p>
-
-                <!-- Product Diagram -->
-                <div class="product-diagram">
-                    <div class="diagram-title">三次技术方案迭代</div>
-                    <div class="diagram-flow">
-                        <div class="flow-node">
-                            <div class="node-icon">&#128196;</div>
-                            <div class="node-label">文件上传</div>
-                        </div>
-                        <span class="flow-arrow">&rarr;</span>
-                        <div class="flow-node">
-                            <div class="node-icon">&#128451;</div>
-                            <div class="node-label">NL2SQL</div>
-                        </div>
-                        <span class="flow-arrow">&rarr;</span>
-                        <div class="flow-node primary">
-                            <div class="node-icon">&#9989;</div>
-                            <div class="node-label">特征提取</div>
-                        </div>
-                    </div>
-                    <div class="diagram-stats">
-                        <div class="stat-box">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">轮方案迭代</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">80%</div>
-                            <div class="stat-label">需求满足度</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">季度&rarr;日常</div>
-                            <div class="stat-label">分析频率提升</div>
-                        </div>
+            <!-- Case 2: AI Data Analysis -->
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <h3 class="case-name">AI Data Analysis Platform</h3>
+                    <div class="case-meta">
+                        <span>Enterprise AI</span>
+                        <span>3 Iterations</span>
+                        <span>NL2SQL</span>
                     </div>
                 </div>
 
-                <div class="product-body">
-                    <!-- 项目背景 -->
-                    <div class="product-section-title"><span class="section-icon">&#128203;</span> 项目背景</div>
-                    <p>
-                        业务线积累了海量时间序列数据和商品价格数据，但所有分析工作都由业务人员手动完成，只能每季度做一次全面分析，日常和周度分析几乎空白，导致很多业务机会被错过。
-                    </p>
+                <div class="case-section">
+                    <div class="case-section-title">Business Problem</div>
+                    <p>业务数据海量但分析靠人工，每季度一次，大量业务机会被错过。</p>
+                </div>
 
-                    <!-- 三次迭代 - 用时间线展示 -->
-                    <div class="product-section-title"><span class="section-icon">&#128260;</span> 三次方案迭代：遇到困难 → 思考 → 解决</div>
+                <div class="case-section">
+                    <div class="case-section-title">Why It Was Hard</div>
+                    <ul>
+                        <li>大模型上下文窗口限制，原始数据直接灌入导致幻觉</li>
+                        <li>NL2SQL 方案遭遇上下文爆炸，查询结果过大时输出质量骤降</li>
+                    </ul>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">Product Thinking</div>
+                    <div class="highlight-card">
+                        大模型擅长结构化推理，不擅长处理海量原始数据。用特征工程替代原始数据灌入。
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <div class="case-section-title">AI Solution</div>
+                    <div class="diagram">
+                        <div class="diagram-label">Three Iterations</div>
+                        <div class="diagram-flow">
+                            <div class="flow-node">
+                                <div class="node-icon">&#128196;</div>
+                                <div class="node-label">文件上传</div>
+                            </div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-node">
+                                <div class="node-icon">&#128451;</div>
+                                <div class="node-label">NL2SQL</div>
+                            </div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-node primary">
+                                <div class="node-icon">&#9989;</div>
+                                <div class="node-label">特征提取</div>
+                            </div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-box">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">轮方案迭代</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">80%</div>
+                                <div class="stat-label">需求满足度</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">季度&rarr;日常</div>
+                                <div class="stat-label">分析频率</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="iteration-timeline">
-                        <!-- 第一阶段 -->
                         <div class="iteration-item">
                             <div class="iteration-dot fail">1</div>
-                            <div class="iteration-phase">第一阶段 · 验证可行性</div>
+                            <div class="iteration-phase">Phase 1 &middot; 验证可行性</div>
                             <div class="iteration-title">文件上传 + 上下文注入</div>
-                            <div class="iteration-body">
-                                让业务人员上传 CSV 数据文件，将数据作为上下文直接输入大模型进行分析。初步验证了 AI 分析的可行性，但很快遇到了瓶颈。
-                            </div>
-                            <div class="iteration-challenge">
-                                受限于当时大模型的上下文窗口（Context Window）大小，数据量稍大就会出现分析错误甚至幻觉，完全无法满足实际业务的数据规模需求。
-                            </div>
+                            <div class="iteration-body">将 CSV 数据作为上下文直接输入大模型。初步验证可行，但数据量稍大即出现幻觉。</div>
+                            <div class="iteration-challenge">受限于上下文窗口大小，无法满足实际业务数据规模。</div>
                         </div>
-
-                        <!-- 第二阶段 -->
                         <div class="iteration-item">
                             <div class="iteration-dot pivot">2</div>
-                            <div class="iteration-phase">第二阶段 · 架构转折</div>
+                            <div class="iteration-phase">Phase 2 &middot; 架构转折</div>
                             <div class="iteration-title">NL2SQL + 数据库直连</div>
-                            <div class="iteration-body">
-                                引入自然语言转 SQL 技术，用户用自然语言提问，系统自动生成 SQL 查询数据库。绕开了上下文窗口限制，但新的问题随之而来。
-                            </div>
-                            <div class="iteration-challenge">
-                                遇到"上下文爆炸"瓶颈——当 SQL 查询结果包含数千条原始数据时，大模型依然无法有效处理和分析，输出质量急剧下降。
-                            </div>
-                            <div class="iteration-insight">
-                                转折思考：直接把海量原始数据丢给大模型，这条路走不通。必须重新审视大模型的能力边界。
-                            </div>
+                            <div class="iteration-body">自然语言转 SQL 查询数据库，绕开上下文限制。但查询结果包含数千条数据时，大模型仍无法有效处理。</div>
+                            <div class="iteration-challenge">SQL 结果过大时，上下文爆炸问题再次出现。</div>
+                            <div class="iteration-insight">直接把海量原始数据丢给大模型，这条路走不通。必须重新审视大模型的能力边界。</div>
                         </div>
-
-                        <!-- 第三阶段 -->
                         <div class="iteration-item">
                             <div class="iteration-dot success">3</div>
-                            <div class="iteration-phase">第三阶段 · 终局方案</div>
-                            <div class="iteration-title">特征提取 + AI分析（最终方案）</div>
-                            <div class="iteration-body">
-                                重新思考大模型能力边界：<strong>大模型擅长基于结构化特征进行逻辑推理，不擅长直接处理海量原始数字。</strong>因此转变架构思路：
-                            </div>
-                            <div class="iteration-insight">
-                                先通过 SQL 在后端提取数据的核心统计特征（总量、分类数量、最大/最小/平均值/标准差、时间范围等高度浓缩值），再将这些特征输入大模型进行分析解读。用"特征工程"替代"原始数据灌入"，彻底解决上下文爆炸问题。
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 项目成果 -->
-                    <div class="product-section-title"><span class="section-icon">&#127942;</span> 项目成果</div>
-                    <div class="result-card">
-                        <div class="result-label">项目成果</div>
-                        <div class="result-text">
-                            最终方案成功满足业务方 <strong>80%</strong> 的基础数据分析需求，将分析频率从"每季度一次"提升到"日常随时"。最大收获是真正理解了<strong>大模型的能力边界</strong>：不是所有问题都适合用 AI 解决，AI 产品经理最重要的能力是找到"业务需求"与"AI能力"的最佳结合点。
+                            <div class="iteration-phase">Phase 3 &middot; 终局方案</div>
+                            <div class="iteration-title">特征提取 + AI 分析</div>
+                            <div class="iteration-body">先通过 SQL 提取核心统计特征（总量、均值、标准差等），再将浓缩特征输入大模型分析。</div>
+                            <div class="iteration-insight">用"特征工程"替代"原始数据灌入"，彻底解决上下文爆炸。</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Q&A Section -->
-    <section class="qa-section" id="qa">
-        <div class="section-content">
-            <div class="qa-header fade-in">
-                <p class="section-eyebrow">AI Exploration</p>
-                <h2 class="section-headline">AI探索</h2>
-                <br>
-                <button class="qa-toggle-btn" id="qaToggle">
-                    展开AI探索 <span class="chevron">&#9660;</span>
-                </button>
-            </div>
-            <div class="qa-content" id="qaContent">
-                <div class="qa-item">
-                    <h3 class="qa-question">AI赋能工作的考核，会不会把token用量作为员工KPI？</h3>
-                </div>
-                <div class="qa-item">
-                    <h3 class="qa-question">如何看待员工产出？0-1 vs 1-100的价值权衡</h3>
+                <div class="case-section">
+                    <div class="case-section-title">Result</div>
+                    <div class="result-line">满足80%基础分析需求，分析频率从季度提升至日常。</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Commitment Section -->
-    <section class="commitment-section" id="commitment">
-        <div class="commitment-content fade-in">
-            <p class="section-eyebrow">Career Commitment</p>
-            <h2 class="section-headline">职业承诺</h2>
-            <p class="commitment-quote">
-                把锐捷网络这份工作，<br><span class="gradient-text">当成为之奋斗一生的事业。</span>
-            </p>
-            <div class="commitment-points">
-                <div class="commitment-point">
-                    <div class="commitment-point-icon">&#127919;</div>
-                    <div class="commitment-point-title">长期主义</div>
-                    <div class="commitment-point-desc">3年朴朴 + 3年锐捷，稳定的职业轨迹证明坚持与韧性</div>
+    <!-- Thinking -->
+    <section class="section thinking-section" id="thinking">
+        <div class="section-inner">
+            <div class="section-label fade-in">Thinking</div>
+            <button class="thinking-toggle fade-in" id="thinkingToggle">
+                展开思考 <span class="chevron">&#9660;</span>
+            </button>
+            <div class="thinking-list" id="thinkingList">
+                <div class="thinking-item">
+                    <div class="thinking-q">AI赋能工作的考核，会不会把 token 用量作为员工 KPI？</div>
                 </div>
-                <div class="commitment-point">
-                    <div class="commitment-point-icon">&#128640;</div>
-                    <div class="commitment-point-title">持续突破</div>
-                    <div class="commitment-point-desc">以强自驱力拓展能力边界，确保复杂项目高质量达成</div>
+                <div class="thinking-item">
+                    <div class="thinking-q">如何看待员工产出？0-1 vs 1-100 的价值权衡</div>
                 </div>
-                <div class="commitment-point">
-                    <div class="commitment-point-icon">&#128170;</div>
-                    <div class="commitment-point-title">行动破局</div>
-                    <div class="commitment-point-desc">不焦虑、不内卷，用行动创造价值</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision + Thanks -->
-    <section class="vision-section">
-        <div class="vision-content fade-in">
-            <h2 class="vision-quote">
-                AI融入每一个产品，<br><span class="gradient-text">赋能每一个行业场景。</span>
-            </h2>
-            <p class="vision-desc">
-                我深信人工智能将重新定义每一个行业。凭借在ToB领域的深厚积累和AI全流程的实战经验，我希望能在AI产品化的道路上持续深耕，为企业创造真实可量化的业务价值。
-            </p>
-            <div class="thanks-block">
-                <h2 class="thanks-title">
-                    谢谢观看<span class="highlight">.</span>
-                </h2>
-                <p class="thanks-sub">期待与您共创未来</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p class="footer-text">&copy; 2025 赵金成 &middot; AI Product Manager</p>
+    <footer class="footer">
+        <p class="footer-text">
+            Let's talk about AI and workflow. &middot; <a href="mailto:602947401@qq.com">602947401@qq.com</a>
+        </p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script>
-        // Intersection Observer for fade-in
-        const fadeEls = document.querySelectorAll('.fade-in');
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
+        // Fade-in on scroll
+        var fadeEls = document.querySelectorAll('.fade-in');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, i * 60);
-                    obs.unobserve(entry.target);
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        fadeEls.forEach(el => obs.observe(el));
+        fadeEls.forEach(function(el) { observer.observe(el); });
 
         // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(a.getAttribute('href'));
+                var target = document.querySelector(a.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Q&A Toggle
-        const qaToggle = document.getElementById('qaToggle');
-        const qaContent = document.getElementById('qaContent');
-
-        qaToggle.addEventListener('click', () => {
-            qaContent.classList.toggle('show');
-            qaToggle.classList.toggle('active');
-
-            if (qaContent.classList.contains('show')) {
-                qaToggle.innerHTML = '收起AI探索 <span class="chevron">&#9650;</span>';
+        // Thinking toggle
+        var toggleBtn = document.getElementById('thinkingToggle');
+        var thinkingList = document.getElementById('thinkingList');
+        toggleBtn.addEventListener('click', function() {
+            thinkingList.classList.toggle('show');
+            toggleBtn.classList.toggle('active');
+            if (thinkingList.classList.contains('show')) {
+                toggleBtn.innerHTML = '收起思考 <span class="chevron">&#9650;</span>';
             } else {
-                qaToggle.innerHTML = '展开AI探索 <span class="chevron">&#9660;</span>';
+                toggleBtn.innerHTML = '展开思考 <span class="chevron">&#9660;</span>';
             }
         });
     </script>
