@@ -591,6 +591,221 @@
             background: var(--white);
         }
 
+        /* ===== Insights Section ===== */
+        .insights-section {
+            background: var(--gray5);
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--gray2);
+            margin-bottom: 48px;
+            margin-top: -32px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .insight-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .insight-number {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray3);
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .insight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .insight-core {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--black);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .insight-desc {
+            font-size: 13px;
+            color: var(--gray2);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .insight-visual {
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Visual: Workflow Blocks */
+        .workflow-blocks {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .wf-block {
+            width: 32px;
+            height: 24px;
+            background: var(--gray4);
+            border-radius: 4px;
+            border: 1px solid var(--gray3);
+        }
+
+        .wf-connector {
+            width: 20px;
+            height: 2px;
+            background: var(--gray3);
+        }
+
+        /* Visual: AI Flow */
+        .ai-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .ai-node {
+            padding: 6px 12px;
+            background: var(--gray4);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray1);
+        }
+
+        .ai-node.algo {
+            background: #e0e7ff;
+            color: #4f46e5;
+        }
+
+        .ai-node.result {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .ai-arrow {
+            color: var(--gray3);
+            font-size: 14px;
+        }
+
+        /* Visual: MVP Cycle */
+        .mvp-cycle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .mvp-step {
+            padding: 6px 14px;
+            background: var(--gray4);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray1);
+        }
+
+        .mvp-arrow {
+            color: var(--gray3);
+            font-size: 12px;
+        }
+
+        /* Visual: Workflow Compare */
+        .workflow-compare {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .wf-before, .wf-after {
+            display: flex;
+            gap: 4px;
+        }
+
+        .wf-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gray3);
+            border-radius: 50%;
+        }
+
+        .wf-before .wf-dot {
+            background: var(--gray3);
+        }
+
+        .wf-after .wf-dot {
+            background: var(--blue);
+        }
+
+        .wf-arrow {
+            color: var(--gray2);
+            font-size: 14px;
+        }
+
+        /* Visual: Feedback Loop */
+        .feedback-loop {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        .loop-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray1);
+        }
+
+        .loop-arrow {
+            position: absolute;
+            font-size: 14px;
+            color: var(--gray3);
+        }
+
+        .loop-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .loop-2 { top: 50%; right: 0; transform: translateY(-50%) rotate(90deg); }
+        .loop-3 { bottom: 0; left: 50%; transform: translateX(-50%) rotate(180deg); }
+        .loop-4 { top: 50%; left: 0; transform: translateY(-50%) rotate(-90deg); }
+
+        /* Responsive */
+        @media (max-width: 834px) {
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .thinking-toggle {
             display: inline-flex;
             align-items: center;
@@ -741,6 +956,425 @@
                 font-size: 12px;
             }
         }
+/* ===== Case Study v2 ===== */
+
+/* Background Section */
+.case-bg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.case-bg-image {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    aspect-ratio: 16/10;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.case-bg-text h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+}
+
+.case-bg-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray1);
+}
+
+/* Problem Cards */
+.case-problems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.case-problem-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.case-problem-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.case-problem-card-body {
+    padding: 24px;
+}
+
+.case-problem-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.case-problem-card-desc {
+    font-size: 14px;
+    color: var(--gray1);
+    line-height: 1.7;
+}
+
+/* Challenge Section */
+.case-challenge {
+    text-align: center;
+    padding: 64px 40px;
+    margin-bottom: 80px;
+    background: var(--gray5);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.case-challenge-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+}
+
+.case-challenge-quote {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 640px;
+    margin: 0 auto 24px;
+}
+
+.case-challenge-desc {
+    font-size: 15px;
+    color: var(--gray1);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* Strategy Cards */
+.case-strategies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.case-strategy-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.case-strategy-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gray5);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.case-strategy-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray2);
+    margin-bottom: 6px;
+}
+
+.case-strategy-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 12px;
+}
+
+.case-strategy-desc {
+    font-size: 14px;
+    color: var(--gray1);
+    line-height: 1.7;
+}
+
+/* Actions Timeline */
+.case-actions {
+    margin-bottom: 80px;
+}
+
+.case-actions-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+}
+
+.case-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.case-action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.case-action-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.case-action-text {
+    font-size: 14px;
+    color: var(--gray1);
+    line-height: 1.6;
+}
+
+.case-action-text strong {
+    color: var(--black);
+    font-weight: 600;
+}
+
+/* Results Section */
+.case-results {
+    text-align: center;
+    padding: 64px 40px;
+    margin-bottom: 0;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.case-results-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+}
+
+.case-results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.case-result-item {
+    text-align: center;
+}
+
+.case-result-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.case-result-unit {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray2);
+}
+
+.case-result-label {
+    font-size: 13px;
+    color: var(--gray2);
+    margin-top: 8px;
+}
+
+.case-result-note {
+    font-size: 14px;
+    color: var(--gray1);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 834px) {
+    .case-bg {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .case-problems {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-strategies {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-actions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .case-challenge {
+        padding: 48px 24px;
+    }
+    
+    .case-results {
+        padding: 48px 24px;
+    }
+}
+
+/* ===== Thinking Section v2 ===== */
+
+.thinking-section {
+    background: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.thinking-section .section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.thinking-subtitle {
+    font-size: 15px;
+    color: var(--gray2);
+    margin-bottom: 64px;
+    margin-top: -32px;
+    line-height: 1.6;
+}
+
+.thinking-card {
+    text-align: left;
+    padding: 0;
+}
+
+.thinking-question {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+}
+
+.thinking-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--gray3);
+    margin: 0 auto 48px;
+}
+
+.thinking-content {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.thinking-para {
+    font-size: 15px;
+    color: var(--gray1);
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.thinking-para:last-child {
+    margin-bottom: 0;
+}
+
+.thinking-highlight {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: 48px 0;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.thinking-stage {
+    text-align: center;
+}
+
+.thinking-stage-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.thinking-stage-label {
+    font-size: 13px;
+    color: var(--gray2);
+    font-weight: 500;
+}
+
+.thinking-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 48px;
+}
+
+.thinking-keyword {
+    font-size: 13px;
+    color: var(--gray2);
+    padding: 8px 16px;
+    background: var(--gray5);
+    border-radius: 999px;
+    border: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 834px) {
+    .thinking-section {
+        min-height: auto;
+        padding: 80px 0;
+    }
+    
+    .thinking-highlight {
+        gap: 32px;
+    }
+    
+    .thinking-stage-num {
+        font-size: 24px;
+    }
+}
     </style>
 </head>
 <body>
@@ -748,11 +1382,12 @@
     <!-- Nav -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">ZJC</a>
+            <a href="#" class="nav-logo">赵金成</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#cases">Cases</a></li>
-                <li><a href="#thinking">Thinking</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="#insights">沉淀</a></li>
+                <li><a href="#thinking">互动</a></li>
             </ul>
         </div>
     </nav>
@@ -761,18 +1396,17 @@
     <section class="hero">
         <div class="hero-inner fade-in">
             <img src="profile.jpg" class="hero-photo" alt="Profile">
-            <h1 class="hero-title">AI Native Product Manager</h1>
+            <h1 class="hero-title">AI 产品经理</h1>
             <p class="hero-sub">
                 擅长利用 AI 与工作流重构企业业务流程<br>
-                专注于企业 AI 落地、Workflow Automation 与 AI 产品快速验证
+                专注于企业 AI 落地、工作流自动化与 AI 产品快速验证
             </p>
             <div class="hero-tags">
-                <span class="hero-tag">AI Workflow</span>
-                <span class="hero-tag">Enterprise AI</span>
-                <span class="hero-tag">Automation</span>
-                <span class="hero-tag">AI Product</span>
-                <span class="hero-tag">Multi-Agent</span>
-                <span class="hero-tag">Business Efficiency</span>
+                <span class="hero-tag">AI 工作流</span>
+                <span class="hero-tag">自动化</span>
+                <span class="hero-tag">AI 产品</span>
+                <span class="hero-tag">多智能体</span>
+                <span class="hero-tag">业务效率</span>
             </div>
             <p class="hero-contact">
                 &#9993; 602947401@qq.com &nbsp;&middot;&nbsp; &#128241; 186-4980-2400 &nbsp;&middot;&nbsp; &#128205; 福州
@@ -783,7 +1417,7 @@
     <!-- About -->
     <section class="section" id="about">
         <div class="section-inner">
-            <div class="section-label fade-in">About</div>
+            <div class="section-label fade-in">关于</div>
             <div class="about-grid">
                 <div class="about-card fade-in">
                     <div class="edu-header">
@@ -805,7 +1439,7 @@
                         <li><span class="career-company">星网锐捷</span> <span class="career-period">2020 - 2023</span><br>技术产品经理，产品线管理</li>
                     </ul>
                     <div class="skills-row">
-                        <span class="skill-tag">AI Workflow 设计</span>
+                        <span class="skill-tag">AI 工作流设计</span>
                         <span class="skill-tag">企业 AI 落地</span>
                         <span class="skill-tag">业务流程重构</span>
                         <span class="skill-tag">敏捷交付</span>
@@ -818,186 +1452,215 @@
     <!-- Cases -->
     <section class="section cases-section" id="cases">
         <div class="section-inner">
-            <div class="section-label fade-in">Selected Cases</div>
+            <div class="section-label fade-in">案例</div>
 
-            <!-- Case 1: AI Snap Match -->
+            <!-- Case 1: AI 拍立得 -->
             <div class="case-card fade-in">
                 <div class="case-header">
-                    <h3 class="case-name">AI Snap Match</h3>
+                    <h3 class="case-name">AI 拍立得</h3>
                     <div class="case-meta">
-                        <span>Enterprise AI Workflow</span>
-                        <span>1 Month Delivery</span>
-                        <span>Zero Frontend</span>
+                        <span>企业 AI 工作流</span>
+                        <span>1 个月交付</span>
+                        <span>零前端开发</span>
                     </div>
                 </div>
 
-                <div class="case-section">
-                    <div class="case-section-title">Business Problem</div>
-                    <p>业务高层线下调研时，传统商品比价路径需重复操作10+次，决策效率极低。</p>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">Why It Was Hard</div>
-                    <ul>
-                        <li>内部拍照识别算法尚在开发，预计 2-3 个月交付</li>
-                        <li>高层需求时效性极高，无法等待常规排期</li>
-                        <li>线下场景复杂，AI识别准确率难以保障</li>
-                    </ul>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">Product Thinking</div>
-                    <div class="highlight-card">
-                        不重新造轮子。用企业已有生态（飞书）作为承载，用 LLM Vision 补齐能力短板，用既有搜索算法保证准确率。三层能力解耦组装，而非从零构建。
+                <!-- 1. Background -->
+                <div class="case-bg fade-in">
+                    <div class="case-bg-text">
+                        <h3>Background</h3>
+                        <p>业务方高层在线下超市进行市场调研，希望能够通过"拍照一步完成商品对比"，快速获取竞品价格与商品信息，减少繁琐操作。</p>
                     </div>
+                    <img src="images/case-bg.jpg" class="case-bg-image" alt="超市调研场景">
                 </div>
 
-                <div class="case-section">
-                    <div class="case-section-title">AI Solution</div>
-                    <img src="images/product1-scene.jpg" class="case-image" alt="线下超市调研场景">
-                    <p class="case-image-caption">业务场景：高层在超市进行市场调研和竞品比价</p>
-                    <div class="diagram">
-                        <div class="diagram-label">Technical Architecture</div>
-                        <div class="diagram-flow">
-                            <div class="flow-node">
-                                <div class="node-icon">&#128247;</div>
-                                <div class="node-label">拍照上传</div>
-                            </div>
-                            <span class="flow-arrow">&rarr;</span>
-                            <div class="flow-node ai">
-                                <div class="node-icon">&#129504;</div>
-                                <div class="node-label">LLM Vision</div>
-                            </div>
-                            <span class="flow-arrow">&rarr;</span>
-                            <div class="flow-node primary">
-                                <div class="node-icon">&#128269;</div>
-                                <div class="node-label">搜索匹配</div>
-                            </div>
-                            <span class="flow-arrow">&rarr;</span>
-                            <div class="flow-node">
-                                <div class="node-icon">&#128172;</div>
-                                <div class="node-label">飞书卡片</div>
-                            </div>
+                <!-- 2. User Problems -->
+                <div class="case-problems fade-in">
+                    <div class="case-problem-card">
+                        <img src="images/case-problem1.jpg" alt="操作繁琐">
+                        <div class="case-problem-card-body">
+                            <div class="case-problem-card-title">操作繁琐</div>
+                            <div class="case-problem-card-desc">打开 APP → 搜索商品 → 找到商品 → 对比价格，链路漫长。</div>
                         </div>
-                        <div class="stat-row">
-                            <div class="stat-box">
-                                <div class="stat-number">1个月</div>
-                                <div class="stat-label">交付周期</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">60%</div>
-                                <div class="stat-label">周期缩短</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">前端开发量</div>
-                            </div>
+                    </div>
+                    <div class="case-problem-card">
+                        <img src="images/case-problem2.jpg" alt="重复劳动">
+                        <div class="case-problem-card-body">
+                            <div class="case-problem-card-title">重复劳动</div>
+                            <div class="case-problem-card-desc">调研多个商品时，需要反复重复上述全部操作。</div>
+                        </div>
+                    </div>
+                    <div class="case-problem-card">
+                        <img src="images/case-problem3.jpg" alt="缺少沉淀">
+                        <div class="case-problem-card-body">
+                            <div class="case-problem-card-title">缺少沉淀</div>
+                            <div class="case-problem-card-desc">调研结束后没有完整记录，后续复盘困难。</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="case-section">
-                    <div class="case-section-title">Result</div>
-                    <div class="result-line">1个月交付，周期缩短60%，成为公司AI轻量化落地标杆。</div>
+                <!-- 3. Key Challenge -->
+                <div class="case-challenge fade-in">
+                    <div class="case-challenge-label">Key Challenge</div>
+                    <div class="case-challenge-quote">如何在最短时间、最低成本下，验证一个 AI 产品的完整业务流程？</div>
+                    <div class="case-challenge-desc">公司内部 AI 视觉能力尚未成熟，无法投入大规模研发资源。但高层需求时效性极高——这不是一个"慢慢做"的项目。</div>
+                </div>
+
+                <!-- 4. Product Thinking -->
+                <div class="fade-in" style="margin-bottom: 80px;">
+                    <div class="case-actions-label">Product Thinking</div>
+                    <div class="case-strategies">
+                        <div class="case-strategy-card">
+                            <div class="case-strategy-icon">&#128172;</div>
+                            <div class="case-strategy-label">策略一</div>
+                            <div class="case-strategy-title">复用飞书生态</div>
+                            <div class="case-strategy-desc">使用飞书机器人 + 消息卡片作为交互入口，复用企业已有消息系统与工作流，前端开发量为零。</div>
+                        </div>
+                        <div class="case-strategy-card">
+                            <div class="case-strategy-icon">&#129504;</div>
+                            <div class="case-strategy-label">策略二</div>
+                            <div class="case-strategy-title">AI + 算法混合</div>
+                            <div class="case-strategy-desc">大模型负责商品视觉识别，公司既有搜索算法负责精准匹配。AI 负责理解，传统算法负责稳定。</div>
+                        </div>
+                        <div class="case-strategy-card">
+                            <div class="case-strategy-icon">&#128203;</div>
+                            <div class="case-strategy-label">策略三</div>
+                            <div class="case-strategy-title">低代码数据层</div>
+                            <div class="case-strategy-desc">飞书多维表格替代传统数据库，快速实现数据记录与反馈闭环，减少服务端开发量。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Actions -->
+                <div class="case-actions fade-in">
+                    <div class="case-actions-label">Actions</div>
+                    <div class="case-actions-grid">
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>搭建 Dify 工作流</strong>，配置大模型视觉识别与特征提取链路</div>
+                        </div>
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>配置飞书机器人</strong>，实现拍照即触发识别的交互闭环</div>
+                        </div>
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>设计消息卡片</strong>，交付比价结果与评分反馈入口</div>
+                        </div>
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>多维表格管理数据</strong>，自动记录识别结果与用户反馈</div>
+                        </div>
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>协同算法团队</strong>，跨部门推进搜索撮合算法对接</div>
+                        </div>
+                        <div class="case-action-item">
+                            <div class="case-action-dot"></div>
+                            <div class="case-action-text"><strong>快速验证流程</strong>，端到端跑通"拍照 → 识别 → 匹配 → 交付"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Results -->
+                <div class="case-results fade-in">
+                    <div class="case-results-label">Results</div>
+                    <div class="case-results-grid">
+                        <div class="case-result-item">
+                            <div class="case-result-number">1<span class="case-result-unit"> 个月</span></div>
+                            <div class="case-result-label">完整交付</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="case-result-number">15<span class="case-result-unit"> 秒</span></div>
+                            <div class="case-result-label">单次调研耗时</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="case-result-number">60<span class="case-result-unit">%</span></div>
+                            <div class="case-result-label">周期缩短</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="case-result-number">0<span class="case-result-unit"> 行</span></div>
+                            <div class="case-result-label">前端代码</div>
+                        </div>
+                    </div>
+                    <div class="case-result-note">成为公司 AI 轻量化落地与敏捷开发的标杆案例。</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Case 2: AI Data Analysis -->
-            <div class="case-card fade-in">
-                <div class="case-header">
-                    <h3 class="case-name">AI Data Analysis Platform</h3>
-                    <div class="case-meta">
-                        <span>Enterprise AI</span>
-                        <span>3 Iterations</span>
-                        <span>NL2SQL</span>
-                    </div>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">Business Problem</div>
-                    <p>业务数据海量但分析靠人工，每季度一次，大量业务机会被错过。</p>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">Why It Was Hard</div>
-                    <ul>
-                        <li>大模型上下文窗口限制，原始数据直接灌入导致幻觉</li>
-                        <li>NL2SQL 方案遭遇上下文爆炸，查询结果过大时输出质量骤降</li>
-                    </ul>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">Product Thinking</div>
-                    <div class="highlight-card">
-                        大模型擅长结构化推理，不擅长处理海量原始数据。用特征工程替代原始数据灌入。
-                    </div>
-                </div>
-
-                <div class="case-section">
-                    <div class="case-section-title">AI Solution</div>
-                    <div class="diagram">
-                        <div class="diagram-label">Three Iterations</div>
-                        <div class="diagram-flow">
-                            <div class="flow-node">
-                                <div class="node-icon">&#128196;</div>
-                                <div class="node-label">文件上传</div>
-                            </div>
-                            <span class="flow-arrow">&rarr;</span>
-                            <div class="flow-node">
-                                <div class="node-icon">&#128451;</div>
-                                <div class="node-label">NL2SQL</div>
-                            </div>
-                            <span class="flow-arrow">&rarr;</span>
-                            <div class="flow-node primary">
-                                <div class="node-icon">&#9989;</div>
-                                <div class="node-label">特征提取</div>
-                            </div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-box">
-                                <div class="stat-number">3</div>
-                                <div class="stat-label">轮方案迭代</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">80%</div>
-                                <div class="stat-label">需求满足度</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">季度&rarr;日常</div>
-                                <div class="stat-label">分析频率</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="iteration-timeline">
-                        <div class="iteration-item">
-                            <div class="iteration-dot fail">1</div>
-                            <div class="iteration-phase">Phase 1 &middot; 验证可行性</div>
-                            <div class="iteration-title">文件上传 + 上下文注入</div>
-                            <div class="iteration-body">将 CSV 数据作为上下文直接输入大模型。初步验证可行，但数据量稍大即出现幻觉。</div>
-                            <div class="iteration-challenge">受限于上下文窗口大小，无法满足实际业务数据规模。</div>
-                        </div>
-                        <div class="iteration-item">
-                            <div class="iteration-dot pivot">2</div>
-                            <div class="iteration-phase">Phase 2 &middot; 架构转折</div>
-                            <div class="iteration-title">NL2SQL + 数据库直连</div>
-                            <div class="iteration-body">自然语言转 SQL 查询数据库，绕开上下文限制。但查询结果包含数千条数据时，大模型仍无法有效处理。</div>
-                            <div class="iteration-challenge">SQL 结果过大时，上下文爆炸问题再次出现。</div>
-                            <div class="iteration-insight">直接把海量原始数据丢给大模型，这条路走不通。必须重新审视大模型的能力边界。</div>
-                        </div>
-                        <div class="iteration-item">
-                            <div class="iteration-dot success">3</div>
-                            <div class="iteration-phase">Phase 3 &middot; 终局方案</div>
-                            <div class="iteration-title">特征提取 + AI 分析</div>
-                            <div class="iteration-body">先通过 SQL 提取核心统计特征（总量、均值、标准差等），再将浓缩特征输入大模型分析。</div>
-                            <div class="iteration-insight">用"特征工程"替代"原始数据灌入"，彻底解决上下文爆炸。</div>
+    <!-- Insights -->
+    <section class="section insights-section" id="insights">
+        <div class="section-inner">
+            <div class="section-label fade-in">Insights</div>
+            <div class="section-subtitle fade-in">来自真实 AI 产品落地过程中的思考与判断</div>
+            
+            <div class="insights-grid">
+                <!-- Card 01 -->
+                <div class="insight-card fade-in">
+                    <div class="insight-number">01</div>
+                    <h3 class="insight-title">不要重复造轮子</h3>
+                    <p class="insight-core">敏捷开发的核心不是加班，而是不重复造轮子。</p>
+                    <p class="insight-desc">相比从零建设系统，更重要的是复用已有生态与基础设施，把精力集中在真正影响业务价值的核心能力上。</p>
+                    <div class="insight-visual">
+                        <div class="workflow-blocks">
+                            <div class="wf-block"></div>
+                            <div class="wf-block"></div>
+                            <div class="wf-block"></div>
+                            <div class="wf-connector"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="case-section">
-                    <div class="case-section-title">Result</div>
-                    <div class="result-line">满足80%基础分析需求，分析频率从季度提升至日常。</div>
+                <!-- Card 02 -->
+                <div class="insight-card fade-in">
+                    <div class="insight-number">02</div>
+                    <h3 class="insight-title">AI 不负责一切</h3>
+                    <p class="insight-core">AI 擅长理解，传统系统擅长稳定。</p>
+                    <p class="insight-desc">真正可落地的 AI 产品，往往不是完全依赖 AI，而是 AI 与传统系统协同后的结果。</p>
+                    <div class="insight-visual">
+                        <div class="ai-flow">
+                            <div class="ai-node">AI</div>
+                            <div class="ai-arrow">→</div>
+                            <div class="ai-node algo">算法</div>
+                            <div class="ai-arrow">→</div>
+                            <div class="ai-node result">结果</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="insight-card fade-in">
+                    <div class="insight-number">03</div>
+                    <h3 class="insight-title">先验证价值，再追求完美</h3>
+                    <p class="insight-core">验证业务价值，比建设完美系统更重要。</p>
+                    <p class="insight-desc">相比大而全的建设，更重要的是快速跑通 Workflow，验证用户是否真正愿意使用。</p>
+                    <div class="insight-visual">
+                        <div class="mvp-cycle">
+                            <div class="mvp-step">MVP</div>
+                            <div class="mvp-arrow">→</div>
+                            <div class="mvp-step">验证</div>
+                            <div class="mvp-arrow">→</div>
+                            <div class="mvp-step">迭代</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="insight-card fade-in">
+                    <div class="insight-number">04</div>
+                    <h3 class="insight-title">Badcase 比成功案例更重要</h3>
+                    <p class="insight-core">AI 产品不是一次性交付，而是持续迭代。</p>
+                    <p class="insight-desc">相比成功案例，Badcase 更能暴露系统真实问题。所以我更关注：错误归因、用户反馈、数据闭环与持续优化。</p>
+                    <div class="insight-visual">
+                        <div class="feedback-loop">
+                            <div class="loop-arrow loop-1">→</div>
+                            <div class="loop-arrow loop-2">→</div>
+                            <div class="loop-arrow loop-3">→</div>
+                            <div class="loop-arrow loop-4">→</div>
+                            <div class="loop-center">迭代</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1006,16 +1669,50 @@
     <!-- Thinking -->
     <section class="section thinking-section" id="thinking">
         <div class="section-inner">
-            <div class="section-label fade-in">Thinking</div>
-            <button class="thinking-toggle fade-in" id="thinkingToggle">
-                展开思考 <span class="chevron">&#9660;</span>
-            </button>
-            <div class="thinking-list" id="thinkingList">
-                <div class="thinking-item">
-                    <div class="thinking-q">AI赋能工作的考核，会不会把 token 用量作为员工 KPI？</div>
-                </div>
-                <div class="thinking-item">
-                    <div class="thinking-q">如何看待员工产出？0-1 vs 1-100 的价值权衡</div>
+            <div class="section-label fade-in">互动</div>
+            <div class="thinking-subtitle fade-in">我真正关心的问题<br>关于产品长期价值、组织协作与持续迭代的一些思考</div>
+            
+            <div class="thinking-card fade-in">
+                <h2 class="thinking-question">
+                    0 → 1 与 1 → 100，<br>组织如何看待不同阶段的价值创造？
+                </h2>
+                
+                <div class="thinking-divider"></div>
+                
+                <div class="thinking-content">
+                    <p class="thinking-para">
+                        过去的工作经验让我逐渐意识到，一个产品真正的价值，往往不只是 0 → 1 的上线交付。
+                    </p>
+                    
+                    <p class="thinking-para">
+                        很多时候，更困难的部分反而是后续长期迭代：持续和业务沟通、理解真实需求、优化体验与能力，让产品能够长期产生价值。
+                    </p>
+                    
+                    <div class="thinking-highlight">
+                        <div class="thinking-stage">
+                            <div class="thinking-stage-num">0 → 1</div>
+                            <div class="thinking-stage-label">Launch</div>
+                        </div>
+                        <div class="thinking-stage">
+                            <div class="thinking-stage-num">1 → 100</div>
+                            <div class="thinking-stage-label">Iteration</div>
+                        </div>
+                    </div>
+                    
+                    <p class="thinking-para">
+                        但在实际环境中，0 → 1 的创新项目通常更容易被关注，而 1 → 100 的持续运营与优化，则容易被视为"守成"。
+                    </p>
+                    
+                    <p class="thinking-para">
+                        这种导向有时会导致：团队更倾向于不断启动新项目，而忽略已有产品的长期建设与复利价值。
+                    </p>
+                    
+                    <div class="thinking-keywords">
+                        <span class="thinking-keyword">创新突破</span>
+                        <span class="thinking-keyword">长期迭代</span>
+                        <span class="thinking-keyword">产品沉淀</span>
+                        <span class="thinking-keyword">业务复利</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1024,7 +1721,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p class="footer-text">
-            Let's talk about AI and workflow. &middot; <a href="mailto:602947401@qq.com">602947401@qq.com</a>
+            本网站及所有内容均通过 vibo coding 完成
         </p>
     </footer>
 
@@ -1060,9 +1757,9 @@
             thinkingList.classList.toggle('show');
             toggleBtn.classList.toggle('active');
             if (thinkingList.classList.contains('show')) {
-                toggleBtn.innerHTML = '收起思考 <span class="chevron">&#9650;</span>';
+                toggleBtn.innerHTML = '收起互动 <span class="chevron">&#9650;</span>';
             } else {
-                toggleBtn.innerHTML = '展开思考 <span class="chevron">&#9660;</span>';
+                toggleBtn.innerHTML = '展开互动 <span class="chevron">&#9660;</span>';
             }
         });
     </script>
